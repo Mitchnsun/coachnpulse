@@ -19,6 +19,7 @@ module.exports = function(grunt) {
           optimization : 2
         },
         files : {
+          "work/layout.css" : "less/layout.less",
           "work/style.css" : "less/style.less" // destination file and source file
         }
       }
@@ -28,7 +29,7 @@ module.exports = function(grunt) {
         // Task-specific options go here.
       },
       all : {
-        src : ["bower_components/pure/pure-min.css", "work/style.css"],
+        src : ["bower_components/pure/pure-min.css", "work/layout.css", "work/style.css"],
         dest : "dist/style.css"
       },
     },
