@@ -1,1 +1,8 @@
 .project
+npm-debug.log
+node_modules
+reports
+bower_components
+css
+dist
+work
