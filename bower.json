@@ -1,0 +1,22 @@
+{
+  "name": "Coach'n Pulse",
+  "version": "1.0.0",
+  "authors": [
+    "matthieu_comperat <matthieu.comperat@gmail.com>"
+  ],
+  "description": "Luc Nahon coach",
+  "main": "js/script.js",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "pure": "~0.6.0"
+  }
+}
