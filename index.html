@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,40 +12,62 @@
   </head>
 
   <body>
-    <div class="pure-g-r" id="layout">
-      <div class="sidebar pure-u">
-        <header class="header">
-          <hgroup>
-            <h1 class="brand-title">Luc Nahon</h1>
-            <h2 class="brand-tagline">Educateur sportif</h2>
-            <h3 class="brand-tagline">Diplômé d'Etat DEJEPS</h3>
-          </hgroup>
-        </header>
+    <div class="header">
+      <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="">Coach'n Pulse</a>
+
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item pure-menu-selected">
+            <a href="#" class="pure-menu-link">Accueil</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Description</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Contact</a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Tarifs</a>
+          </li>
+        </ul>
       </div>
-      <div class="pure-u-1">
-        <header class="header top">
-          <img src="dist/assets/img/whitelogo.jpg" alt="Logo"/>
-        </header>
-        <div class="content">
-          <p>
-            Programme sportif et bilan personnalisé adapté à votre niveau et vos objectifs
+    </div>
+    <div class="pure-g">
+      <div class="photo-box u-1 u-med-1-3 u-lrg-1-4">
+        <a href="#"> <img src="dist/assets/img/running3@1x.jpg" alt="Running"> </a>
+      </div>
+
+      <div class="text-box u-1 u-med-2-3 u-lrg-3-4">
+        <div class="l-box">
+          <h1 class="text-box-head">Luc Nahon, diplomé d'Etat DEJEPS Triathlon</h1>
+          <p class="text-box-subhead">
+            Educateur sportif.
+            <br/>
+            Programme sportif et bilan personnalisé adapté à votre niveau et vos objectifs.
           </p>
-          <br/>
+          <hr />
+          <p id="textInfos" class="text-box-subhead">Demande d'informations</p>
           <form class="pure-form">
-            <fieldset>
-              <legend>
-                Demande d'informations
-              </legend>
-
-              <input type="email" placeholder="Email">
-
-              <button type="submit" class="pure-button pure-button-primary">
+              <input type="text" placeholder="Email">
+              <button type="submit" class="pure-button">
                 Envoyer
               </button>
-            </fieldset>
-          </form>
+            </form>
         </div>
       </div>
+
+      <div class="photo-box u-1 u-med-1-2 u-lrg-1-3">
+        <a href="#"> <img src="dist/assets/img/swimming2@1x.jpg" alt="Natation"> </a>
+      </div>
+
+      <div class="photo-box u-1 u-med-1-2 u-lrg-1-3">
+        <a href="#"> <img src="dist/assets/img/cycling@1x.jpg" alt="Vélo"> </a>
+      </div>
+
+      <div class="photo-box u-1 u-med-1-2 u-lrg-1-3">
+        <a href="#"> <img src="dist/assets/img/running4@1x.jpg" alt="Running"> </a>
+      </div>
+
     </div>
     <!-- Javascript -->
     <script src="dist/script.min.js"></script>
