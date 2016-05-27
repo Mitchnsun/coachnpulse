@@ -21,8 +21,7 @@ module.exports = function(grunt) {
         files : {
           "work/gallery.css" : "less/gallery.less",
           "work/gallery-grid.css" : "less/gallery-grid.less",
-          "work/layout.css" : "less/layout.less",
-          "work/style.css" : "less/style.less" // destination file and source file
+          "work/layout.css" : "less/layout.less"
         }
       }
     },
