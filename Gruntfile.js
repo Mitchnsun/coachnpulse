@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         // Task-specific options go here.
       },
       all : {
-        src : ["bower_components/pure/pure-min.css", "work/gallery-grid.css", "work/gallery.css", "work/style.css"],
+        src : ["bower_components/pure/pure-min.css", "work/gallery-grid.css", "work/gallery.css", "work/layout.css"],
         dest : "dist/style.css"
       },
     },
