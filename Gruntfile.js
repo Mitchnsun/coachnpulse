@@ -37,7 +37,7 @@ module.exports = function(grunt) {
     uglify : {
       dist : {
         files : {
-          'dist/script.min.js' : ['bower_components/jquery/dist/jquery.js',
+          'dist/script.min.js' : ['bower_components/jquery/dist/jquery.js', 'js/utils.js',
                                   'js/script.js']
         }
       }
