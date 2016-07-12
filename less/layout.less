@@ -38,10 +38,9 @@
     .title {
       font-size: 1.4em;
       color: @white;
+      margin-bottom: 0;
     }
     label {
-      position: relative;
-      top: -20px;
       font-size: 0.5em;
     }
     ul {
@@ -100,6 +99,25 @@
   }
   .text-box {
     height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .poster-box {
+    article {
+      width: 100%;
+      background: @logo-blue;
+      div {
+        margin: 0 15px;
+      }
+      .title {
+        font-size: 1em;
+      }
+      ul {
+        margin-right: 25px;
+        font-size: 0.9em;
+      }
+    }
   }
 }
 
