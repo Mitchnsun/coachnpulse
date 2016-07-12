@@ -46,5 +46,6 @@ This README documents steps are necessary to get your application up and running
 For any information, contact matthieu.comperat@gmail.com
 
 ### Version ###
-* v1.1 - May 2016 (new design)
+* v1.2 - July 2016 - Contents
+* v1.1 - May 2016 (new design) - Home showcase
 * v1.0 - May 2016
