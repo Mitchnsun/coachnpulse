@@ -111,11 +111,10 @@
         margin: 0 15px;
       }
       .title {
-        font-size: 1em;
+        font-size: 1.2em;
       }
       ul {
         margin-right: 25px;
-        font-size: 0.9em;
       }
     }
   }
@@ -137,7 +136,19 @@
   .pure-form {
     display: block;
   }
-  .pure-menu-horizontal .pure-menu-list, .u-lrg-1-4:not(.mobile-only) {
+  .pure-menu-horizontal .pure-menu-heading {
+    display: block;
+  }
+  .pure-menu-horizontal {
+    .pure-menu-list {
+      width: 100%;
+    }
+    .pure-menu-item {
+      width: 33.33%;
+      text-align: center;
+    }
+  }
+  .u-lrg-1-4:not(.mobile-only) {
     display: none;
   }
   .u-lrg-1-3, .u-lrg-2-6, .u-lrg-1-4 {
