@@ -1,3 +1,6 @@
+@white: #fff;
+@black: black;
+@logo-blue: rgb(98, 190, 227);
 #textInfos {
   float: left;
   margin-right: 2em;
@@ -9,6 +12,54 @@
   min-height: 0;
   margin: auto;
   margin-top: 70px;
+}
+.poster-box {
+  overflow: hidden;
+  position: relative;
+  background-color: @black;
+  max-height: 600px;
+  article {
+    height: 100%;
+    text-align: right;
+    color: @white;
+    text-transform: uppercase;
+    background-color: @logo-blue;
+    width: 600px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.85;
+    background: radial-gradient(circle 10px at -86% 50%, transparent, transparent 597px, @logo-blue 600px);
+    background-repeat:no-repeat;
+    div {
+      margin-right: 50px;
+      margin-left: 100px;
+    }
+    h2 {
+      font-size: 1.4em;
+      color: @white;
+    }
+    label {
+      position: relative;
+      top: -20px;
+      font-size: 0.5em;
+    }
+    ul {
+      border-right: 2px solid @white;
+      list-style-type: none;
+      padding-right: 10px;
+      margin-right: 50px;
+    }
+  }
+}
+.flip {
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
 @media (min-width: 1050px) {
