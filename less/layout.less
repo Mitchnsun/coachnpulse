@@ -1,18 +1,70 @@
 @white: #fff;
 @black: black;
 @logo-blue: rgb(98, 190, 227);
+.pure-menu-heading {
+  padding: 1em 1em;
+}
+.pure-table {
+  border: 2px solid @white;
+  thead {
+    background-color: @white;
+  }
+  th {
+    border-left: 2px solid @white;
+    border-width: 0 0 0 2px;
+    vertical-align: middle;
+    text-align: center;
+    &:first-child {
+      background-color: @black;
+      color: @white;
+    }
+  }
+  td {
+    border-left: 2px solid @white;
+    border-bottom: 2px solid @white;
+    vertical-align: middle;
+    color: @white;
+    text-align: center;
+    &:first-child {
+      font-weight: bold;
+      background-color: @white;
+      color: @black;
+    } 
+  }
+}
+.pure-table td {
+  vertical-align: middle;
+}
+.text-box.u-1 {
+  height: 400px;
+}
 #textInfos {
   float: left;
   margin-right: 2em;
-}
-.pure-menu-heading {
-  padding: 1em 1em;
 }
 .logo-container img {
   min-height: 0;
   margin: auto;
   margin-top: 70px;
 }
+
+.blue {
+  background-color: @logo-blue;
+  p, li {
+    color: @white;
+  }
+}
+.flip {
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+/* Description */
 .poster-box {
   overflow: hidden;
   position: relative;
@@ -50,15 +102,6 @@
       margin-right: 50px;
     }
   }
-}
-.flip {
-  -moz-transform: scaleX(-1);
-  -ms-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
 }
 
 @media (min-width: 1050px) {
