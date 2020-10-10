@@ -1,0 +1,11 @@
+/* Fonts */
+@font-face {
+  font-family: AgencyFB;
+  src: url('AgencyFB.ttf');
+}
+
+@font-face {
+  font-family: AgencyFB;
+  src: url('AgencyFB-Bold.ttf');
+  font-weight: bold;
+}

@@ -1,0 +1,26 @@
+import { createGlobalStyle } from 'styled-components';
+import { BLACK, GREY } from './colors';
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-family: 'AgencyFB', sans-serif;
+  }
+  body {
+    color: ${GREY};
+    margin: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: ${BLACK};
+  }
+  a {
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+export default GlobalStyle;
