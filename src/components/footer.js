@@ -10,8 +10,6 @@ const FooterContainer = styled.footer`
   font-size: 0.8rem;
 `;
 
-const Footer = () => (
-  <FooterContainer>Encadrement sportif personalisé ®Coach'n Pulse</FooterContainer>
-);
+const Footer = () => <FooterContainer>Encadrement sportif personalisé ®Coach'n Pulse</FooterContainer>;
 
 export default Footer;

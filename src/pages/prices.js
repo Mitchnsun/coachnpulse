@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
@@ -13,6 +13,7 @@ const Container = styled.div`
     display: flex;
   }
 `;
+
 const Section = styled.section`
   padding: 1rem;
   flex: 1 0 auto;
@@ -43,7 +44,7 @@ const List = styled.ul`
 `;
 
 const Li = styled.li`
- list-style: disc outside none;
+  list-style: disc outside none;
 `;
 
 const PricesPage = ({ data }) => (
@@ -57,11 +58,16 @@ const PricesPage = ({ data }) => (
         <Title>Exemples de tarifs forfaitaires</Title>
         <Text>Exemples de tarifs forfaitaires programme d'entraînement</Text>
         <TablePrices />
-        <Text>Les conseils (techniques, diététiques, matériels) sont inclus dans votre progression et l'accompagnement sportif.</Text>
+        <Text>
+          Les conseils (techniques, diététiques, matériels) sont inclus dans votre progression et l'accompagnement
+          sportif.
+        </Text>
       </Section>
       <Section style={{ background: BLUE, flexBasis: '30%' }}>
         <Title>Possibilité de séances encadrées</Title>
-        <Subtitle>Sur le terrain ou à domicile (course à pied, natation, vélo, préparation physique) <strong>35€/h</strong></Subtitle>
+        <Subtitle>
+          Sur le terrain ou à domicile (course à pied, natation, vélo, préparation physique) <strong>35€/h</strong>
+        </Subtitle>
         <Title>Forfaits séances</Title>
         <List>
           <Li>3 séances: 95€</Li>
@@ -71,11 +77,13 @@ const PricesPage = ({ data }) => (
         </List>
       </Section>
     </Container>
-    <Triptyque images={[
-      data.swimImage.childImageSharp.fluid,
-      data.cycleImage.childImageSharp.fluid,
-      data.runningImage.childImageSharp.fluid
-    ]}/>
+    <Triptyque
+      images={[
+        data.swimImage.childImageSharp.fluid,
+        data.cycleImage.childImageSharp.fluid,
+        data.runningImage.childImageSharp.fluid,
+      ]}
+    />
   </Layout>
 );
 

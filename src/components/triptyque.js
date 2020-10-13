@@ -17,7 +17,9 @@ const Image = styled(props => <Img {...props} />)`
 
 const Triptyque = ({ images = [] }) => (
   <Container>
-    {images.map(image => <Image key={image.src} fluid={image} />)}
+    {images.map(image => (
+      <Image key={image.src} fluid={image} />
+    ))}
   </Container>
 );
 

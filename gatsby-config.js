@@ -9,26 +9,40 @@ module.exports = {
   siteMetadata: {
     title: "Coach'n Pulse",
     description: 'Programme sportif et bilan personalisé adapté à votre niveau et vos objectifs',
-    goals: ['Santé', 'Loisir', 'Renforcement musculaire', 'Perfectionnement sportif', 'Perte de poids', 'Compétition', 'Tonification corporelle', 'Challenge'],
-    sessions: ['Natation', 'Fitness', 'Course à pied', 'Musculation', 'Vélo', 'Préparation physique', 'Triathlon', 'Multi-activité']
+    goals: [
+      'Santé',
+      'Loisir',
+      'Renforcement musculaire',
+      'Perfectionnement sportif',
+      'Perte de poids',
+      'Compétition',
+      'Tonification corporelle',
+      'Challenge',
+    ],
+    sessions: [
+      'Natation',
+      'Fitness',
+      'Course à pied',
+      'Musculation',
+      'Vélo',
+      'Préparation physique',
+      'Triathlon',
+      'Multi-activité',
+    ],
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'img',
-        path: `${__dirname}/src/img/`
-      }
+        path: `${__dirname}/src/img/`,
+      },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        // Add any options here
-      },
-    }, {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
@@ -36,6 +50,6 @@ module.exports = {
           urls: ['/fonts/fonts.css'],
         },
       },
-    }
+    },
   ],
 };

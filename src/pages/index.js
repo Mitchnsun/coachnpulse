@@ -20,6 +20,7 @@ const LogoContainer = styled(props => <Img {...props} />)`
   flex-basis: 30%;
   margin: auto 15%;
 `;
+
 const Image = styled(props => <Img {...props} />)`
   flex-grow: 1;
   flex-basis: 30%;
@@ -35,11 +36,13 @@ const Home = ({ data }) => (
       <Image fluid={data.runningImage.childImageSharp.fluid} />
       <LogoContainer fluid={data.logoImage.childImageSharp.fluid} loading="eager" />
     </Container>
-    <Triptyque images={[
-      data.runningImage2.childImageSharp.fluid,
-      data.swimImage.childImageSharp.fluid,
-      data.cycleImage.childImageSharp.fluid
-    ]}/>
+    <Triptyque
+      images={[
+        data.runningImage2.childImageSharp.fluid,
+        data.swimImage.childImageSharp.fluid,
+        data.cycleImage.childImageSharp.fluid,
+      ]}
+    />
     <Infos />
   </Layout>
 );

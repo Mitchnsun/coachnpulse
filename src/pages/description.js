@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
@@ -14,6 +15,7 @@ const Container = styled.div`
     width: 100%;
   }
 `;
+
 const Image = styled(props => <Img {...props} />)`
   width: 100%;
   max-width: 1024px;
@@ -34,7 +36,7 @@ const Poster = styled.article`
   @media (min-width: 550px) {
     width: 600px;
     background: radial-gradient(circle 10px at -86% 50%, transparent, transparent 597px, ${BLUE} 600px);
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
   }
 `;
 
@@ -66,14 +68,18 @@ const DescriptionPage = ({ data }) => (
         <div style={{ margin: '0 2rem 0 5rem' }}>
           <Title>Programme sportif personnalisé adapté à votre niveau et vos objectifs</Title>
           <List>
-            {data.site.siteMetadata.goals.map(goal => <li>{goal}</li>)}
+            {data.site.siteMetadata.goals.map(goal => (
+              <li key={goal}>{goal}</li>
+            ))}
           </List>
         </div>
         <div style={{ margin: '0 2rem 0 5rem' }}>
           <Title>Possibilité d'accompagnement par des séances encadrées</Title>
           <Subheading>(sur le terrain ou à domicile)</Subheading>
           <List>
-            {data.site.siteMetadata.sessions.map(session => <li>{session}</li>)}
+            {data.site.siteMetadata.sessions.map(session => (
+              <li key={session}>{session}</li>
+            ))}
           </List>
         </div>
       </Poster>

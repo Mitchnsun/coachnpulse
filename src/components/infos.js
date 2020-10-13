@@ -7,6 +7,7 @@ const InfosContainer = styled.div`
     display: flex;
   }
 `;
+
 const Text = styled.p`
   font-size: 1.25rem;
   flex-grow: 1;

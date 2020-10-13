@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { BLACK, GREY } from './colors';
+import { GREY } from './colors';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -8,9 +8,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: ${GREY};
     margin: 0;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    color: ${BLACK};
   }
   a {
     text-decoration: none;

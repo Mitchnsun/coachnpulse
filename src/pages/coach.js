@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
@@ -59,23 +60,26 @@ const CoachPage = ({ data }) => (
       <Image fixed={data.coachImage.childImageSharp.fixed} />
       <Article>
         <Title>Luc Nahon</Title>
-        <Text>
-          Educateur sportif // Diplômé d'Etat DEJEPS, entraîneur de triathlon
-        </Text>
-        <br/>
+        <Text>Educateur sportif // Diplômé d'Etat DEJEPS, entraîneur de triathlon</Text>
+        <br />
         <Text>
           Entraîneur GUC (Grenoble Université Club) section triathlon
-          <br/> Responsable formation et enseignant CNPC sport: running, diététique sportive, musculation, fitness...
-          <br/> Coaching de sportifs d'ultra distance en sport d'endurance
-          <br/> Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)
+          <br />
+          Responsable formation et enseignant CNPC sport: running, diététique sportive, musculation, fitness...
+          <br />
+          Coaching de sportifs d'ultra distance en sport d'endurance
+          <br />
+          Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)
         </Text>
       </Article>
     </Container>
-    <Triptyque images={[
-      data.runningImage.childImageSharp.fluid,
-      data.swimImage.childImageSharp.fluid,
-      data.cycleImage.childImageSharp.fluid
-    ]} />
+    <Triptyque
+      images={[
+        data.runningImage.childImageSharp.fluid,
+        data.swimImage.childImageSharp.fluid,
+        data.cycleImage.childImageSharp.fluid,
+      ]}
+    />
     <Infos />
   </Layout>
 );
