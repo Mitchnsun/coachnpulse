@@ -13,6 +13,9 @@ const Container = styled.div`
 const Image = styled(props => <Img {...props} />)`
   flex-grow: 1;
   flex-basis: 30%;
+  @media (max-width: 750px) {
+    flex-basis: 50%
+  }
 `;
 
 const Triptyque = ({ images = [] }) => (
