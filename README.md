@@ -10,12 +10,12 @@ This README documents steps are necessary to get your application up and running
 ### How do I get set up? ###
 
 * `yarn`
-* `yarn develop`
+* `yarn develop` || `yarn start`
 
 ###### Configuration ######
 
 * Built with Gatsby
-* To see which modules are outdated: `npm outdated`
+* To see which modules are outdated: `npm outdated` || `yarn upgrade-interactive --latest`
 * Auto-deployment with Heroku link to Github
 
 ### Who do I talk to? ###

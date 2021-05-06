@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const path = require('path');
 
 module.exports = {
   /* Your site config here */
@@ -35,7 +36,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'img',
-        path: `${__dirname}/src/img/`,
+        path: path.join(__dirname, '/src/img/'),
       },
     },
     'gatsby-transformer-sharp',
