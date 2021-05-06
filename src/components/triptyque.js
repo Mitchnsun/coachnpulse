@@ -14,7 +14,7 @@ const Image = styled(props => <Img {...props} />)`
   flex-grow: 1;
   flex-basis: 30%;
   @media (max-width: 750px) {
-    flex-basis: 50%
+    flex-basis: 50%;
   }
 `;
 

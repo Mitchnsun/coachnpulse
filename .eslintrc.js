@@ -12,6 +12,11 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', 'prettier'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     semi: [2, 'always'],
     'object-curly-newline': 'off',
