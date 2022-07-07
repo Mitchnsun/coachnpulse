@@ -60,7 +60,11 @@ const CoachPage = ({ data }) => (
       <Image fixed={data.coachImage.childImageSharp.fixed} />
       <Article>
         <Title>Luc Nahon</Title>
-        <Text>Educateur sportif // Diplômé d'Etat DEJEPS, entraîneur de triathlon</Text>
+        <Text>
+          Educateur sportif // Diplômé d'Etat DEJEPS
+          <br />
+          Entraîneur de triathlon, préparateur mental
+        </Text>
         <br />
         <Text>
           Entraîneur GUC (Grenoble Université Club) section triathlon
