@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
 import Layout from '../components/layout';
-import { WHITE, BLUE, BLACK, YELLOW } from '../utils/colors';
+import { WHITE, BLUE, BLACK } from '../utils/colors';
 
 const Container = styled.div`
   overflow: hidden;
@@ -56,13 +56,6 @@ const Subheading = styled.p`
   font-size: 0.75rem;
 `;
 
-const Link = styled.a`
-  color: ${YELLOW};
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 const DescriptionPage = ({ data }) => (
   <Layout>
     <Helmet>
@@ -79,11 +72,6 @@ const DescriptionPage = ({ data }) => (
               <li key={goal}>{goal}</li>
             ))}
           </List>
-        </div>
-        <div style={{ margin: '0 2rem 0 5rem' }}>
-          <Title>
-            La Boutique diététique <Link href="https://beautysane.com/?manager=033-183340">Beautysané</Link>
-          </Title>
         </div>
         <div style={{ margin: '0 2rem 0 5rem' }}>
           <Title>Possibilité d'accompagnement par des séances encadrées</Title>
