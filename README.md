@@ -11,6 +11,7 @@ This README documents steps are necessary to get your application up and running
 
 * `yarn`
 * `yarn develop` || `yarn start`
+* Your site is now running at http://localhost:8000!
 
 ###### Configuration ######
 
@@ -23,6 +24,7 @@ This README documents steps are necessary to get your application up and running
 For any information, contact matthieu.comperat@gmail.com
 
 ### Version ###
+* v3.0 - August 2023 - Gatsby v5 with typescript
 * v2.0 - October 2020 - Gatsby
 * v1.2 - July 2016 - Contents
 * v1.1 - May 2016 (new design) - Home showcase
