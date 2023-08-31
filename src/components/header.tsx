@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { GREY, GREY_LIGHT, BLUE } from '../utils/colors';
 
-const StyledLink = styled(props => <Link {...props} />)`
+const StyledLink = styled((props: any) => <Link {...props} />)`
   display: inline-block;
   color: ${props => (props.hover ? GREY : BLUE)};
   padding: 1rem;
