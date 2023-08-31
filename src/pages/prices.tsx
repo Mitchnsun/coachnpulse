@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
