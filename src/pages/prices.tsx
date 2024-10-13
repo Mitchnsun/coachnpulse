@@ -71,7 +71,7 @@ const PricesPage = () => {
       </Helmet>
       <Container>
         <Section style={{ background: BLACK, flexGrow: 5 }}>
-          <Title>Exemples de tarifs forfaitaires</Title>
+          <Title>Tarifs pour programme à distance</Title>
           <Text>Exemples de tarifs forfaitaires programme d'entraînement</Text>
           <TablePrices />
           <Text>

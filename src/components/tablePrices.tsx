@@ -6,6 +6,7 @@ import { WHITE, BLACK } from '../utils/colors';
 
 const Table = styled.table`
   width: 100%;
+  max-width: 500px;
   border: 2px solid ${WHITE};
   border-collapse: collapse;
   border-spacing: 0;
@@ -47,12 +48,9 @@ const TablePrices = () => (
   <Table>
     <Thead>
       <tr>
-        <Th>Forfait</Th>
+        <Th></Th>
         <Th>
-          Niveau "forme" <br /> (jusqu'à 3 séances/semaine)
-        </Th>
-        <Th>
-          Niveau "performance" <br /> (au-delà de 3 séances par semaine)
+          Forfait
         </Th>
       </tr>
     </Thead>
@@ -60,8 +58,7 @@ const TablePrices = () => (
       {PRICES.map(price => (
         <tr key={price.label}>
           <Td>{price.label}</Td>
-          <Td>{price.fitness}</Td>
-          <Td>{price.perf}</Td>
+          <Td>{price.price}</Td>
         </tr>
       ))}
     </tbody>

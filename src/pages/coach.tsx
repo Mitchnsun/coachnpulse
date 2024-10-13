@@ -87,15 +87,17 @@ const CoachPage = () => {
         <Article>
           <Title>Luc Nahon</Title>
           <Text>
-            Educateur sportif // Diplômé d'Etat DEJEPS
+            Educateur sportif // Diplômé d'Etat DEJEPS Triathlon
             <br />
             Entraîneur de triathlon, préparateur mental
+            <br />
+            Maître Nageur Sauveteur
           </Text>
           <br />
           <Text>
             Entraîneur GUC (Grenoble Université Club) section triathlon
             <br />
-            Responsable formation et enseignant CNPC sport: running, diététique
+            Responsable formation et enseignant Eklore-ed sport: running, diététique
             sportive, musculation, fitness...
             <br />
             Coaching de sportifs d'ultra distance en sport d'endurance
