@@ -94,6 +94,19 @@ const PricesPage = () => {
             </Li>
             <Li>Possibilité d'un bilan spécifique complet diététique: 80€</Li>
           </List>
+          <Title>Coaching et préparation mentale</Title>
+          <Subtitle>
+            En présentiel: <strong>60€/h</strong>
+          </Subtitle>
+          <List>
+            <Li>Forfait 5 séances: 240€</Li>
+          </List>
+          <Subtitle>
+            En visio: <strong>40€/h</strong>
+          </Subtitle>
+          <List>
+            <Li>Forfait 5 séances: 160€</Li>
+          </List>
         </Section>
       </Container>
       <TriptyqueContainer>

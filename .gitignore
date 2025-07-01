@@ -22,3 +22,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Temporary notes
+IMAGE_REPLACEMENT_NOTE.md
