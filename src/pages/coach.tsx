@@ -77,7 +77,7 @@ const CoachPage = () => {
           }}
         >
           <StaticImage
-            src="../img/Luc.jpg"
+            src="../img/Luc-2025.jpeg"
             alt="Luc Nahon"
             placeholder="blurred"
             width={250}
