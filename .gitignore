@@ -13,6 +13,9 @@ node_modules/
 out/
 next-env.d.ts
 
+# TypeScript
+tsconfig.tsbuildinfo
+
 # Mac files
 .DS_Store
 
