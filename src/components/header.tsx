@@ -1,28 +1,30 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import { GREY, GREY_LIGHT, BLUE } from '../utils/colors';
 
-const StyledLink = styled((props: any) => <Link {...props} />)`
+const StyledLink = styled(Link)<{ $hover?: boolean }>`
   display: inline-block;
-  color: ${props => (props.hover ? GREY : BLUE)};
+  color: ${props => (props.$hover ? GREY : BLUE)};
   padding: 1rem;
   &:hover {
-    background-color: ${props => (props.hover ? GREY_LIGHT : 'transparent')};
+    background-color: ${props => (props.$hover ? GREY_LIGHT : 'transparent')};
   }
 `;
 
 const Header = () => (
   <header>
-    <StyledLink to="/">COACH'N PULSE</StyledLink>
-    <StyledLink to="/description/" hover="true">
+    <StyledLink href="/">COACH'N PULSE</StyledLink>
+    <StyledLink href="/description" $hover={true}>
       Description
     </StyledLink>
-    <StyledLink to="/coach/" hover="true">
+    <StyledLink href="/coach" $hover={true}>
       Coach
     </StyledLink>
-    <StyledLink to="/prices/" hover="true">
+    <StyledLink href="/prices" $hover={true}>
       Tarifs
     </StyledLink>
   </header>

@@ -8,10 +8,10 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 
-# gatsby files
-.cache/
-public
-src/gatsby-types.d.ts
+# Next.js files
+.next/
+out/
+next-env.d.ts
 
 # Mac files
 .DS_Store
