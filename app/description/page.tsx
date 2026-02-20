@@ -91,7 +91,7 @@ const DescriptionPage = () => {
           </div>
           <div style={{ margin: "0 2rem 0 5rem" }}>
             <Title>
-              Possibilité d'accompagnement par des séances encadrées
+              Possibilité d&apos;accompagnement par des séances encadrées
             </Title>
             <Subheading>(sur le terrain ou à domicile)</Subheading>
             <List>

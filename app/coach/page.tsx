@@ -83,7 +83,7 @@ const CoachPage = () => {
         <Article>
           <Title>Luc Nahon</Title>
           <Text>
-            Educateur sportif // Diplômé d'Etat DEJEPS Triathlon
+            Educateur sportif // Diplômé d&apos;Etat DEJEPS Triathlon
             <br />
             Entraîneur de triathlon, préparateur mental
             <br />
@@ -96,7 +96,7 @@ const CoachPage = () => {
             Responsable formation et enseignant Eklore-ed sport: running, diététique
             sportive, musculation, fitness...
             <br />
-            Coaching de sportifs d'ultra distance en sport d'endurance
+            Coaching de sportifs d&apos;ultra distance en sport d&apos;endurance
             <br />
             Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)
           </Text>

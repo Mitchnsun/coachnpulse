@@ -21,7 +21,7 @@ const Text = styled.p`
 
 const Infos = () => (
   <InfosContainer>
-    <Text style={{ letterSpacing: '2px' }}>Demande d'informations</Text>
+    <Text style={{ letterSpacing: '2px' }}>Demande d&apos;informations</Text>
     <Text>07 68 79 44 78 | luck.nahon@gmail.com</Text>
   </InfosContainer>
 );

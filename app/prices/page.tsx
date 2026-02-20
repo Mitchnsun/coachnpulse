@@ -68,11 +68,11 @@ const PricesPage = () => {
       <Container>
         <Section style={{ background: BLACK, flexGrow: 5 }}>
           <Title>Tarifs pour programme à distance</Title>
-          <Text>Exemples de tarifs forfaitaires programme d'entraînement</Text>
+          <Text>Exemples de tarifs forfaitaires programme d&apos;entraînement</Text>
           <TablePrices />
           <Text>
             Les conseils (techniques, diététiques, matériels) sont inclus dans
-            votre progression et l'accompagnement sportif.
+            votre progression et l&apos;accompagnement sportif.
           </Text>
         </Section>
         <Section style={{ background: BLUE, flexBasis: "30%" }}>
@@ -86,9 +86,9 @@ const PricesPage = () => {
             <Li>3 séances: 95€</Li>
             <Li>10 séances: 285€</Li>
             <Li>
-              Plus de 20 kms autour de l'agglomération grenobloise: 0,50€/km
+              Plus de 20 kms autour de l&apos;agglomération grenobloise: 0,50€/km
             </Li>
-            <Li>Possibilité d'un bilan spécifique complet diététique: 80€</Li>
+            <Li>Possibilité d&apos;un bilan spécifique complet diététique: 80€</Li>
           </List>
           <Title>Coaching et préparation mentale</Title>
           <Subtitle>

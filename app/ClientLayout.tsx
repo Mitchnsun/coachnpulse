@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../src/components/header';
 import Footer from '../src/components/footer';
 import GlobalStyle from '../src/utils/globalStyle';
+import '../public/fonts/fonts.css';
 
 export default function ClientLayout({
   children,

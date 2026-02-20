@@ -17,7 +17,7 @@ const StyledLink = styled(Link)<{ $hover?: boolean }>`
 
 const Header = () => (
   <header>
-    <StyledLink href="/">COACH'N PULSE</StyledLink>
+    <StyledLink href="/">COACH&apos;N PULSE</StyledLink>
     <StyledLink href="/description" $hover={true}>
       Description
     </StyledLink>

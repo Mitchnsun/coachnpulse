@@ -18,7 +18,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.coachnpulse.com/" />
-        <link rel="stylesheet" href="/fonts/fonts.css" />
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
