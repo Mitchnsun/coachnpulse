@@ -2,7 +2,7 @@
 
 ## Date de migration
 
-Janvier 2025
+Janvier 2026
 
 ## Résumé
 
@@ -25,14 +25,14 @@ Le projet Coach'n Pulse a été migré avec succès de Gatsby v5 vers Next.js 14
 ### Dépendances
 
 - ✅ Remplacé Gatsby par Next.js 14
-- ✅ Conservé styled-components
+- ~~✅ Conservé styled-components~~ → remplacé par TailwindCSS v4 (voir section ci-dessous)
 - ✅ Conservé TypeScript
 - ✅ Supprimé les plugins Gatsby (gatsby-plugin-image, gatsby-plugin-sharp, etc.)
 - ✅ Remplacé react-helmet-async par les métadonnées Next.js
 
 ### Composants et pages
 
-- ✅ Converti tous les composants pour utiliser 'use client' (styled-components)
+- ~~✅ Converti tous les composants pour utiliser 'use client' (styled-components)~~ → `'use client'` n'est plus nécessaire depuis la migration vers TailwindCSS
 - ✅ Remplacé `gatsby Link` par `next/link`
 - ✅ Remplacé `gatsby-plugin-image StaticImage` par `next/image`
 - ✅ Migré les métadonnées du site vers `src/utils/site-metadata.ts`
@@ -74,14 +74,14 @@ Le projet Coach'n Pulse a été migré avec succès de Gatsby v5 vers Next.js 14
 - ✅ Export statique fonctionnel
 - ✅ Toutes les pages rendues correctement
 - ✅ Images chargées correctement
-- ✅ Styled-components fonctionnent en SSR
+- ~~✅ Styled-components fonctionnent en SSR~~ → styled-components a été remplacé par TailwindCSS v4
 
 ## Notes importantes
 
 1. La configuration utilise `output: 'export'` pour générer un site statique
 2. Les images utilisent `unoptimized: true` car l'optimisation automatique n'est pas compatible avec l'export statique
-3. Tous les composants utilisant styled-components sont marqués comme 'use client'
-4. Le GlobalStyle est maintenant un composant client wrappé dans ClientLayout
+3. ~~Tous les composants utilisant styled-components sont marqués comme 'use client'~~ → les composants sont désormais des Server Components (styled-components supprimé)
+4. ~~Le GlobalStyle est maintenant un composant client wrappé dans ClientLayout~~ → les styles globaux sont gérés par `app/globals.css` (TailwindCSS v4) ; `ClientLayout.tsx` a depuis été supprimé, son contenu étant fusionné dans `app/layout.tsx`
 
 ## Compatibilité
 
@@ -145,7 +145,7 @@ Le projet Coach'n Pulse a été migré de styled-components vers TailwindCSS v4 
 - ✅ `app/description/page.tsx` — tous les composants remplacés ; le dégradé radial complexe est géré via la classe `.description-poster` dans `globals.css`
 - ✅ `app/coach/page.tsx` — tous les composants remplacés par classes Tailwind avec breakpoints arbitraires
 - ✅ `app/prices/page.tsx` — tous les composants remplacés par classes Tailwind
-- ✅ `app/ClientLayout.tsx` — suppression de `GlobalStyle` et marqueur `'use client'` (les styles globaux sont désormais dans `app/globals.css` importé par `app/layout.tsx`)
+- ✅ `app/ClientLayout.tsx` — suppression de `GlobalStyle` et marqueur `'use client'` (les styles globaux sont désormais dans `app/globals.css` importé par `app/layout.tsx`) ; le composant étant devenu un simple wrapper sans logique client, il a ensuite été supprimé et son contenu (Header, main, Footer) intégré directement dans `app/layout.tsx`
 
 ### Conventions TailwindCSS retenues
 

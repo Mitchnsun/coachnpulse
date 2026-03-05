@@ -1,8 +1,8 @@
 import React from 'react';
-import { PRICES } from '../data/prices';
+import { PRICES } from '@data/prices';
 
 const TablePrices = () => (
-  <table className="w-full max-w-[500px] border-collapse border-2 border-white text-center align-middle text-[0.9rem]">
+  <table className="w-full max-w-125 border-collapse border-2 border-white text-center align-middle text-[0.9rem]">
     <thead className="bg-white text-black">
       <tr>
         <th className="border-r-2 border-white px-4 py-2 first:border-r-0 first:bg-black first:text-white"></th>

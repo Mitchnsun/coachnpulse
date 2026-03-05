@@ -1,13 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-import TablePrices from '../../src/components/tablePrices';
+import TablePrices from '@components/tablePrices';
 
 const PricesPage = () => {
   return (
     <>
       <div className="min-[950px]:flex">
-        <section className="[flex-grow:5] bg-black p-4">
+        <section className="grow-5 bg-black p-4">
           <h2 className="m-0 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
             Tarifs pour programme à distance
           </h2>
@@ -59,7 +59,7 @@ const PricesPage = () => {
         </section>
       </div>
       <div className="flex flex-wrap bg-black">
-        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
+        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/swimming2.jpg"
             alt="Running Illustration"
@@ -67,7 +67,7 @@ const PricesPage = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
+        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/cycling.jpg"
             alt="Swimming Illustration"
@@ -75,7 +75,7 @@ const PricesPage = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
+        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/running5.jpg"
             alt="Cycling Illustration"

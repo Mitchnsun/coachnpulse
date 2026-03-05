@@ -1,13 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { siteMetadata } from '../../src/utils/site-metadata';
+import { siteMetadata } from '@utils/site-metadata';
 
 const DescriptionPage = () => {
   const { goals, sessions } = siteMetadata;
   return (
-    <div className="relative overflow-hidden bg-black max-[1024px]:w-full">
-      <div className="relative h-[600px] w-full max-w-[1024px]">
+    <div className="relative overflow-hidden bg-black lg:w-full">
+      <div className="relative h-150 w-full max-w-5xl">
         <Image
           src="/img/running3.jpg"
           alt="Running illustration"
