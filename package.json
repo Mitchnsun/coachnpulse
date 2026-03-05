@@ -1,44 +1,34 @@
 {
   "name": "coachnpulse",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Luc Nahon coach",
   "private": true,
   "repository": "https://github.com/Mitchnsun/coachnpulse.git",
   "author": "Matthieu Compérat <matthieu.comperat@gmail.com>",
   "license": "ISC",
   "keywords": [
-    "gatsby"
+    "nextjs"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^2.1.4",
-    "gatsby": "^5.13.7",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-plugin-styled-components": "^6.13.1",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
+    "next": "^14.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet-async": "^2.0.5",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
-    "@types/node": "^20.16.11",
+    "@types/node": "^24.0.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@types/styled-components": "^5.1.34",
     "eslint": "^8.57.1",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-webpack-plugin": "^4.2.0",
+    "eslint-config-next": "^14.2.0",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   },

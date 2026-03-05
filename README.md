@@ -10,20 +10,21 @@ This README documents steps are necessary to get your application up and running
 ### How do I get set up? ###
 
 * `yarn`
-* `yarn develop` || `yarn start`
-* Your site is now running at http://localhost:8000!
+* `yarn dev`
+* Your site is now running at http://localhost:3000!
 
 ###### Configuration ######
 
-* Built with Gatsby
+* Built with Next.js 14
 * To see which modules are outdated: `npm outdated` || `yarn upgrade-interactive --latest`
-* Auto-deployment with Heroku link to Github
+* Static site export for deployment
 
 ### Who do I talk to? ###
 
 For any information, contact matthieu.comperat@gmail.com
 
 ### Version ###
+* v4.0 - January 2025 - Next.js 14 migration
 * v3.0 - August 2023 - Gatsby v5 with typescript
 * v2.0 - October 2020 - Gatsby
 * v1.2 - July 2016 - Contents

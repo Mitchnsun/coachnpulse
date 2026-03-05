@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styled from 'styled-components';
 import { GREY, BLACK } from '../utils/colors';
@@ -10,6 +12,6 @@ const FooterContainer = styled.footer`
   font-size: 0.8rem;
 `;
 
-const Footer = () => <FooterContainer>Encadrement sportif personalisé ®Coach'n Pulse</FooterContainer>;
+const Footer = () => <FooterContainer>Encadrement sportif personalisé ®Coach&apos;n Pulse</FooterContainer>;
 
 export default Footer;
