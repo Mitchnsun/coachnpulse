@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import Infos from "../src/components/infos";
+import Infos from '../src/components/infos';
 
 const Home = () => {
   return (
     <>
-      <div className="flex bg-black items-center">
-        <div className="grow basis-[30%] relative min-h-[400px]">
+      <div className="flex items-center bg-black">
+        <div className="relative min-h-[400px] grow basis-[30%]">
           <Image
             src="/img/running3.jpg"
             alt="Running illustration"
@@ -16,7 +16,7 @@ const Home = () => {
             priority
           />
         </div>
-        <div className="grow-[2] basis-[30%] mx-[15%] relative min-h-[300px]">
+        <div className="relative mx-[15%] min-h-[300px] grow-[2] basis-[30%]">
           <Image
             src="/img/blacklogo.jpg"
             alt="Black logo illustration"
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-wrap bg-black">
-        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
+        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/running2.jpg"
             alt="Running Illustration"
@@ -35,7 +35,7 @@ const Home = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
+        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/swimming2.jpg"
             alt="Swimming Illustration"
@@ -43,7 +43,7 @@ const Home = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
+        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/cycling2.jpg"
             alt="Cycling Illustration"

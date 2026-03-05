@@ -1,25 +1,20 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import Infos from "../../src/components/infos";
+import Infos from '../../src/components/infos';
 
 const CoachPage = () => {
   return (
     <>
       <div className="bg-black min-[800px]:flex min-[800px]:h-[300px] min-[800px]:items-center">
-        <div className="relative overflow-hidden inline-block w-[250px] h-[300px] shrink-0">
-          <Image
-            src="/img/Luc-2025.jpeg"
-            alt="Luc Nahon"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
+        <div className="relative inline-block h-[300px] w-[250px] shrink-0 overflow-hidden">
+          <Image src="/img/Luc-2025.jpeg" alt="Luc Nahon" fill style={{ objectFit: 'cover' }} />
         </div>
-        <article className="min-[800px]:ml-[15%] max-[800px]:mx-10 max-[800px]:py-4">
-          <h1 className="m-0 text-white pb-3 font-normal uppercase tracking-[0.05rem] text-2xl">
+        <article className="max-[800px]:mx-10 max-[800px]:py-4 min-[800px]:ml-[15%]">
+          <h1 className="m-0 pb-3 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
             Luc Nahon
           </h1>
-          <p className="text-yellow font-normal tracking-[0.1rem] m-0">
+          <p className="text-yellow m-0 font-normal tracking-[0.1rem]">
             Educateur sportif // Diplômé d&apos;Etat DEJEPS Triathlon
             <br />
             Entraîneur de triathlon, préparateur mental
@@ -27,11 +22,11 @@ const CoachPage = () => {
             Maître Nageur Sauveteur
           </p>
           <br />
-          <p className="text-yellow font-normal tracking-[0.1rem] m-0">
+          <p className="text-yellow m-0 font-normal tracking-[0.1rem]">
             Entraîneur GUC (Grenoble Université Club) section triathlon
             <br />
-            Responsable formation et enseignant Eklore-ed sport: running, diététique
-            sportive, musculation, fitness...
+            Responsable formation et enseignant Eklore-ed sport: running, diététique sportive,
+            musculation, fitness...
             <br />
             Coaching de sportifs d&apos;ultra distance en sport d&apos;endurance
             <br />
@@ -40,7 +35,7 @@ const CoachPage = () => {
         </article>
       </div>
       <div className="flex flex-wrap bg-black">
-        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
+        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/running.jpg"
             alt="Running Illustration"
@@ -48,7 +43,7 @@ const CoachPage = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
+        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/swimming.jpg"
             alt="Swimming Illustration"
@@ -56,7 +51,7 @@ const CoachPage = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
+        <div className="relative min-h-[300px] grow basis-[30%] max-[750px]:basis-1/2">
           <Image
             src="/img/cycling2.jpg"
             alt="Cycling Illustration"

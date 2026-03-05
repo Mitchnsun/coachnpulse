@@ -6,10 +6,18 @@ const navLinkClass = 'inline-block text-grey p-4 hover:bg-grey-light';
 
 const Header = () => (
   <header>
-    <Link href="/" className={logoClass}>COACH&apos;N PULSE</Link>
-    <Link href="/description" className={navLinkClass}>Description</Link>
-    <Link href="/coach" className={navLinkClass}>Coach</Link>
-    <Link href="/prices" className={navLinkClass}>Tarifs</Link>
+    <Link href="/" className={logoClass}>
+      COACH&apos;N PULSE
+    </Link>
+    <Link href="/description" className={navLinkClass}>
+      Description
+    </Link>
+    <Link href="/coach" className={navLinkClass}>
+      Coach
+    </Link>
+    <Link href="/prices" className={navLinkClass}>
+      Tarifs
+    </Link>
   </header>
 );
 
