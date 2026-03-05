@@ -15,7 +15,7 @@ This README documents steps are necessary to get your application up and running
 
 ###### Configuration
 
-- Built with Next.js 14
+- Built with Next.js 15 and React 19
 - To see which modules are outdated: `npm outdated` || `yarn upgrade-interactive --latest`
 - Static site export for deployment
 
@@ -25,6 +25,7 @@ For any information, contact matthieu.comperat@gmail.com
 
 ### Version
 
+- v5.0 - March 2026 - Next.js 15 and React 19 migration
 - v4.0 - January 2025 - Next.js 14 migration
 - v3.0 - August 2023 - Gatsby v5 with typescript
 - v2.0 - October 2020 - Gatsby
