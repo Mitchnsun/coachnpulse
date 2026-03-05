@@ -1,46 +1,14 @@
-'use client';
+import React from 'react';
+import Image from 'next/image';
 
-import React from "react";
-import Image from "next/image";
-import styled from "styled-components";
-
-import Infos from "../src/components/infos";
-import { BLACK } from "../src/utils/colors";
-
-const Container = styled.div`
-  display: flex;
-  background: ${BLACK};
-  align-items: center;
-`;
-
-const TriptyqueContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  background: ${BLACK};
-`;
-
-const ImageContainer = styled.div`
-  flex-grow: 1;
-  flex-basis: 30%;
-  position: relative;
-  min-height: 300px;
-  @media (max-width: 750px) {
-    flex-basis: 50%;
-  }
-`;
-
-const StyledImage = styled(Image)`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-`;
+import Infos from '@components/infos';
 
 const Home = () => {
   return (
     <>
-      <Container>
-        <div style={{ flexGrow: 1, flexBasis: '30%', position: 'relative', minHeight: '400px' }}>
-          <StyledImage
+      <div className="flex items-center bg-black">
+        <div className="relative min-h-100 grow basis-[30%]">
+          <Image
             src="/img/running3.jpg"
             alt="Running illustration"
             fill
@@ -48,8 +16,8 @@ const Home = () => {
             priority
           />
         </div>
-        <div style={{ flexGrow: 2, flexBasis: '30%', margin: 'auto 15%', position: 'relative', minHeight: '300px' }}>
-          <StyledImage
+        <div className="relative mx-[15%] min-h-75 grow-2 basis-[30%]">
+          <Image
             src="/img/blacklogo.jpg"
             alt="Black logo illustration"
             fill
@@ -57,30 +25,33 @@ const Home = () => {
             priority
           />
         </div>
-      </Container>
-      <TriptyqueContainer>
-        <ImageContainer>
-          <StyledImage
+      </div>
+      <div className="flex flex-wrap bg-black">
+        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
+          <Image
             src="/img/running2.jpg"
             alt="Running Illustration"
             fill
+            style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-        <ImageContainer>
-          <StyledImage
+        </div>
+        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
+          <Image
             src="/img/swimming2.jpg"
             alt="Swimming Illustration"
             fill
+            style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-        <ImageContainer>
-          <StyledImage
+        </div>
+        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
+          <Image
             src="/img/cycling2.jpg"
             alt="Cycling Illustration"
             fill
+            style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-      </TriptyqueContainer>
+        </div>
+      </div>
       <Infos />
     </>
   );
