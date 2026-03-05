@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 
 const logoClass = 'inline-block text-blue p-4 hover:bg-transparent';
