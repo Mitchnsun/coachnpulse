@@ -1,32 +1,15 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 
-import { GREY, GREY_LIGHT, BLUE } from '../utils/colors';
-
-const StyledLink = styled(Link)<{ $hover?: boolean }>`
-  display: inline-block;
-  color: ${props => (props.$hover ? GREY : BLUE)};
-  padding: 1rem;
-  &:hover {
-    background-color: ${props => (props.$hover ? GREY_LIGHT : 'transparent')};
-  }
-`;
+const logoClass = 'inline-block text-blue p-4 hover:bg-transparent';
+const navLinkClass = 'inline-block text-grey p-4 hover:bg-grey-light';
 
 const Header = () => (
   <header>
-    <StyledLink href="/">COACH&apos;N PULSE</StyledLink>
-    <StyledLink href="/description" $hover={true}>
-      Description
-    </StyledLink>
-    <StyledLink href="/coach" $hover={true}>
-      Coach
-    </StyledLink>
-    <StyledLink href="/prices" $hover={true}>
-      Tarifs
-    </StyledLink>
+    <Link href="/" className={logoClass}>COACH&apos;N PULSE</Link>
+    <Link href="/description" className={navLinkClass}>Description</Link>
+    <Link href="/coach" className={navLinkClass}>Coach</Link>
+    <Link href="/prices" className={navLinkClass}>Tarifs</Link>
   </header>
 );
 

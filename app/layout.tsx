@@ -2,6 +2,8 @@ import React from 'react';
 import ClientLayout from './ClientLayout';
 import type { Metadata } from 'next';
 import { siteMetadata } from '../src/utils/site-metadata';
+import './globals.css';
+import '../public/fonts/fonts.css';
 
 export const metadata: Metadata = {
   title: siteMetadata.title,

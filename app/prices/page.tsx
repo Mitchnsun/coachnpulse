@@ -1,136 +1,89 @@
-'use client';
-
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
 
 import TablePrices from "../../src/components/tablePrices";
-import { WHITE, BLACK, YELLOW, BLUE } from "../../src/utils/colors";
-
-const Container = styled.div`
-  @media (min-width: 950px) {
-    display: flex;
-  }
-`;
-
-const TriptyqueContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  background: ${BLACK};
-`;
-
-const ImageContainer = styled.div`
-  flex-grow: 1;
-  flex-basis: 30%;
-  position: relative;
-  min-height: 300px;
-  @media (max-width: 750px) {
-    flex-basis: 50%;
-  }
-`;
-
-const Section = styled.section`
-  padding: 1rem;
-  flex: 1 0 auto;
-`;
-
-const Title = styled.h2`
-  margin: 0;
-  color: ${WHITE};
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  font-size: 1.5rem;
-`;
-
-const Subtitle = styled.p`
-  color: ${WHITE};
-  font-weight: normal;
-  letter-spacing: 0.1rem;
-`;
-
-const Text = styled.p`
-  color: ${YELLOW};
-  margin: 1rem 0;
-`;
-
-const List = styled.ul`
-  color: ${WHITE};
-`;
-
-const Li = styled.li`
-  list-style: disc outside none;
-`;
 
 const PricesPage = () => {
   return (
     <>
-      <Container>
-        <Section style={{ background: BLACK, flexGrow: 5 }}>
-          <Title>Tarifs pour programme à distance</Title>
-          <Text>Exemples de tarifs forfaitaires programme d&apos;entraînement</Text>
+      <div className="min-[950px]:flex">
+        <section className="p-4 bg-black [flex-grow:5]">
+          <h2 className="m-0 text-white font-normal uppercase tracking-[0.05rem] text-2xl">
+            Tarifs pour programme à distance
+          </h2>
+          <p className="text-yellow my-4">
+            Exemples de tarifs forfaitaires programme d&apos;entraînement
+          </p>
           <TablePrices />
-          <Text>
+          <p className="text-yellow my-4">
             Les conseils (techniques, diététiques, matériels) sont inclus dans
             votre progression et l&apos;accompagnement sportif.
-          </Text>
-        </Section>
-        <Section style={{ background: BLUE, flexBasis: "30%" }}>
-          <Title>Possibilité de séances encadrées</Title>
-          <Subtitle>
+          </p>
+        </section>
+        <section className="p-4 bg-blue basis-[30%]">
+          <h2 className="m-0 text-white font-normal uppercase tracking-[0.05rem] text-2xl">
+            Possibilité de séances encadrées
+          </h2>
+          <p className="text-white font-normal tracking-[0.1rem]">
             Sur le terrain ou à domicile (course à pied, natation, vélo,
             préparation physique) <strong>35€/h</strong>
-          </Subtitle>
-          <Title>Forfaits séances</Title>
-          <List>
-            <Li>3 séances: 95€</Li>
-            <Li>10 séances: 285€</Li>
-            <Li>
+          </p>
+          <h2 className="m-0 text-white font-normal uppercase tracking-[0.05rem] text-2xl">
+            Forfaits séances
+          </h2>
+          <ul className="text-white">
+            <li className="list-disc list-outside">3 séances: 95€</li>
+            <li className="list-disc list-outside">10 séances: 285€</li>
+            <li className="list-disc list-outside">
               Plus de 20 kms autour de l&apos;agglomération grenobloise: 0,50€/km
-            </Li>
-            <Li>Possibilité d&apos;un bilan spécifique complet diététique: 80€</Li>
-          </List>
-          <Title>Coaching et préparation mentale</Title>
-          <Subtitle>
+            </li>
+            <li className="list-disc list-outside">
+              Possibilité d&apos;un bilan spécifique complet diététique: 80€
+            </li>
+          </ul>
+          <h2 className="m-0 text-white font-normal uppercase tracking-[0.05rem] text-2xl">
+            Coaching et préparation mentale
+          </h2>
+          <p className="text-white font-normal tracking-[0.1rem]">
             En présentiel: <strong>60€/h</strong>
-          </Subtitle>
-          <List>
-            <Li>Forfait 5 séances: 240€</Li>
-          </List>
-          <Subtitle>
+          </p>
+          <ul className="text-white">
+            <li className="list-disc list-outside">Forfait 5 séances: 240€</li>
+          </ul>
+          <p className="text-white font-normal tracking-[0.1rem]">
             En visio: <strong>40€/h</strong>
-          </Subtitle>
-          <List>
-            <Li>Forfait 5 séances: 160€</Li>
-          </List>
-        </Section>
-      </Container>
-      <TriptyqueContainer>
-        <ImageContainer>
+          </p>
+          <ul className="text-white">
+            <li className="list-disc list-outside">Forfait 5 séances: 160€</li>
+          </ul>
+        </section>
+      </div>
+      <div className="flex flex-wrap bg-black">
+        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
           <Image
             src="/img/swimming2.jpg"
             alt="Running Illustration"
             fill
             style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-        <ImageContainer>
+        </div>
+        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
           <Image
             src="/img/cycling.jpg"
             alt="Swimming Illustration"
             fill
             style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-        <ImageContainer>
+        </div>
+        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
           <Image
             src="/img/running5.jpg"
             alt="Cycling Illustration"
             fill
             style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-      </TriptyqueContainer>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey: #666666;
+  --color-grey-light: #eeeeee;
+  --color-blue: #62bee3;
+  --color-green: #61b842;
+  --color-yellow: #ffbe5e;
+
+  --font-agency: 'AgencyFB', sans-serif;
+}
+
+html {
+  font-family: var(--font-agency);
+}
+
+body {
+  color: var(--color-grey);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Description page: curved left-edge overlay effect */
+@media (min-width: 550px) {
+  .description-poster {
+    width: 600px;
+    background: radial-gradient(
+      circle 10px at -86% 50%,
+      transparent,
+      transparent 597px,
+      #62bee3 600px
+    );
+    background-repeat: no-repeat;
+  }
+}

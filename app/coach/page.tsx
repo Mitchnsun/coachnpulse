@@ -1,78 +1,13 @@
-'use client';
-
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
 
 import Infos from "../../src/components/infos";
-import { WHITE, BLACK, YELLOW } from "../../src/utils/colors";
-
-const Container = styled.div`
-  background: ${BLACK};
-  @media (min-width: 800px) {
-    display: flex;
-    height: 300px;
-    align-items: center;
-  }
-`;
-
-const Title = styled.h1`
-  margin: 0;
-  color: ${WHITE};
-  padding-bottom: 0.75rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  font-size: 1.5rem;
-`;
-
-const TriptyqueContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  background: ${BLACK};
-`;
-
-const ImageContainer = styled.div`
-  flex-grow: 1;
-  flex-basis: 30%;
-  position: relative;
-  min-height: 300px;
-  @media (max-width: 750px) {
-    flex-basis: 50%;
-  }
-`;
-
-const Article = styled.article`
-  @media (min-width: 800px) {
-    margin-left: 15%;
-  }
-  @media (max-width: 800px) {
-    margin: 0 2.5rem;
-    padding: 1rem 0;
-  }
-`;
-
-const Text = styled.p`
-  color: ${YELLOW};
-  font-weight: normal;
-  letter-spacing: 0.1rem;
-  margin: 0;
-`;
 
 const CoachPage = () => {
   return (
     <>
-      <Container>
-        <div
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            display: "inline-block",
-            width: 250,
-            height: 300,
-            flexShrink: 0,
-          }}
-        >
+      <div className="bg-black min-[800px]:flex min-[800px]:h-[300px] min-[800px]:items-center">
+        <div className="relative overflow-hidden inline-block w-[250px] h-[300px] shrink-0">
           <Image
             src="/img/Luc-2025.jpeg"
             alt="Luc Nahon"
@@ -80,17 +15,19 @@ const CoachPage = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <Article>
-          <Title>Luc Nahon</Title>
-          <Text>
+        <article className="min-[800px]:ml-[15%] max-[800px]:mx-10 max-[800px]:py-4">
+          <h1 className="m-0 text-white pb-3 font-normal uppercase tracking-[0.05rem] text-2xl">
+            Luc Nahon
+          </h1>
+          <p className="text-yellow font-normal tracking-[0.1rem] m-0">
             Educateur sportif // Diplômé d&apos;Etat DEJEPS Triathlon
             <br />
             Entraîneur de triathlon, préparateur mental
             <br />
             Maître Nageur Sauveteur
-          </Text>
+          </p>
           <br />
-          <Text>
+          <p className="text-yellow font-normal tracking-[0.1rem] m-0">
             Entraîneur GUC (Grenoble Université Club) section triathlon
             <br />
             Responsable formation et enseignant Eklore-ed sport: running, diététique
@@ -99,35 +36,35 @@ const CoachPage = () => {
             Coaching de sportifs d&apos;ultra distance en sport d&apos;endurance
             <br />
             Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)
-          </Text>
-        </Article>
-      </Container>
-      <TriptyqueContainer>
-        <ImageContainer>
+          </p>
+        </article>
+      </div>
+      <div className="flex flex-wrap bg-black">
+        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
           <Image
             src="/img/running.jpg"
             alt="Running Illustration"
             fill
             style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-        <ImageContainer>
+        </div>
+        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
           <Image
             src="/img/swimming.jpg"
             alt="Swimming Illustration"
             fill
             style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-        <ImageContainer>
+        </div>
+        <div className="grow basis-[30%] relative min-h-[300px] max-[750px]:basis-1/2">
           <Image
             src="/img/cycling2.jpg"
             alt="Cycling Illustration"
             fill
             style={{ objectFit: 'cover' }}
           />
-        </ImageContainer>
-      </TriptyqueContainer>
+        </div>
+      </div>
       <Infos />
     </>
   );
