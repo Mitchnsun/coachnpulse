@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import { siteMetadata } from '@utils/site-metadata';
 import Header from '@components/header';
