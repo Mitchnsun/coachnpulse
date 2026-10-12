@@ -18,9 +18,9 @@ const EXPERIENCES = [
 ];
 
 const PHOTOS = [
-  { src: '/img/running.jpg', alt: 'Course à pied' },
   { src: '/img/swimming.jpg', alt: 'Natation' },
   { src: '/img/cycling2.jpg', alt: 'Vélo', position: '70% center' },
+  { src: '/img/running.jpg', alt: 'Course à pied' },
 ];
 
 type CoachListProps = {

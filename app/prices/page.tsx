@@ -42,7 +42,7 @@ const PricesPage = () => {
           <div>
             <h2 className={sectionTitle}>Possibilité de séances encadrées</h2>
             <p className="mt-4 max-w-[40ch] text-white/78">
-              Sur le terrain ou à domicile (course à pied, natation, vélo, préparation physique)
+              Sur le terrain ou à domicile (natation, vélo, course à pied, préparation physique)
             </p>
             <div className="mt-7 flex items-baseline gap-2">
               <span className="font-condensed text-blue text-[clamp(64px,7cqw,104px)] leading-[.9] font-bold">

@@ -6,9 +6,9 @@ import { siteMetadata } from '@utils/site-metadata';
 import { container, gutterX, primaryButton, sectionY } from '@utils/styles';
 
 const SPORTS = [
-  { src: '/img/running2.jpg', label: 'Course à pied' },
   { src: '/img/swimming2.jpg', label: 'Natation' },
   { src: '/img/cycling2.jpg', label: 'Vélo', position: '70% center' },
+  { src: '/img/running2.jpg', label: 'Course à pied' },
 ];
 
 const Home = () => {
@@ -49,7 +49,7 @@ const Home = () => {
         <div className={container}>
           <div className="mb-[clamp(28px,3cqw,44px)] flex flex-wrap items-end justify-between gap-5">
             <h2 className="font-condensed text-[clamp(34px,3.6cqw,52px)] leading-none font-bold text-white uppercase">
-              Course à pied, natation, vélo
+              Natation, vélo, course à pied
             </h2>
             <Link
               href="/description"
