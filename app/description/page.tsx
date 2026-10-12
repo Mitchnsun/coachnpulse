@@ -1,46 +1,73 @@
-import Image from 'next/image';
+import Link from 'next/link';
 
+import PageHero from '@components/pageHero';
 import { siteMetadata } from '@utils/site-metadata';
+import {
+  container,
+  gutterX,
+  primaryButton,
+  sectionTitle,
+  sectionY,
+  twoColumnGrid,
+} from '@utils/styles';
 
 const DescriptionPage = () => {
   const { goals, sessions } = siteMetadata;
   return (
-    <div className="relative overflow-hidden bg-black lg:w-full">
-      <div className="relative h-150 w-full max-w-5xl">
-        <Image
-          src="/img/running3.jpg"
-          alt="Running illustration"
-          fill
-          style={{
-            objectFit: 'cover',
-            transform: 'scaleX(-1)',
-          }}
-        />
-      </div>
-      <article className="description-poster bg-blue absolute top-0 right-0 h-full text-right text-white uppercase opacity-85">
-        <div style={{ margin: '0 2rem 0 5rem' }}>
-          <h2 className="text-[1.4rem] text-white">
+    <>
+      <PageHero
+        image="/img/running3.jpg"
+        imagePosition="center 35%"
+        overlayClassName="from-black/20"
+        eyebrow="Le programme"
+        title="Description"
+      />
+      <section className={`${gutterX} ${sectionY}`}>
+        <div className={`items-start gap-[clamp(28px,5cqw,80px)] ${container} ${twoColumnGrid}`}>
+          <h2 className={`text-balance ${sectionTitle}`}>
             Programme sportif personnalisé adapté à votre niveau et vos objectifs
           </h2>
-          <ul className="mr-12 border-r-2 border-white pr-4">
-            {goals.map((goal) => (
-              <li key={goal}>{goal}</li>
+          <ul className="grid grid-cols-2 gap-x-[clamp(16px,2.4cqw,32px)]">
+            {goals.map((goal, index) => (
+              <li
+                key={goal}
+                className={`border-line flex items-baseline gap-3.5 border-t py-[18px] ${
+                  index >= goals.length - 2 ? 'border-b' : ''
+                }`}
+              >
+                <span className="font-condensed text-blue-dark text-[15px] font-semibold">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="text-[clamp(16px,1.4cqw,19px)] font-medium">{goal}</span>
+              </li>
             ))}
           </ul>
         </div>
-        <div style={{ margin: '0 2rem 0 5rem' }}>
-          <h2 className="text-[1.4rem] text-white">
+      </section>
+      <section className={`bg-black text-white ${gutterX} ${sectionY}`}>
+        <div className={container}>
+          <h2 className={`max-w-[20ch] text-balance ${sectionTitle}`}>
             Possibilité d&apos;accompagnement par des séances encadrées
           </h2>
-          <p className="m-0 text-xs">(sur le terrain ou à domicile)</p>
-          <ul className="mr-12 border-r-2 border-white pr-4">
+          <p className="text-blue mt-3.5 mb-[clamp(28px,3.6cqw,48px)] text-[18px]">
+            (sur le terrain ou à domicile)
+          </p>
+          <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,150px),1fr))] gap-px border border-white/14 bg-white/14">
             {sessions.map((session) => (
-              <li key={session}>{session}</li>
+              <li
+                key={session}
+                className="font-condensed bg-black px-5 py-[clamp(20px,2.4cqw,32px)] text-[clamp(20px,1.8cqw,26px)] font-semibold uppercase"
+              >
+                {session}
+              </li>
             ))}
           </ul>
+          <Link href="/prices" className={`mt-9 inline-block ${primaryButton}`}>
+            Voir les tarifs
+          </Link>
         </div>
-      </article>
-    </div>
+      </section>
+    </>
   );
 };
 

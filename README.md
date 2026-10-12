@@ -25,7 +25,7 @@ For any information, contact matthieu.comperat@gmail.com
 
 ### Version
 
-- v5.0 - March 2026 - Next.js 15 and React 19 migration
+- v5.0 - October 2026 - New Design / Next.js 15 and React 19 migration
 - v4.0 - January 2025 - Next.js 14 migration
 - v3.0 - August 2023 - Gatsby v5 with typescript
 - v2.0 - October 2020 - Gatsby

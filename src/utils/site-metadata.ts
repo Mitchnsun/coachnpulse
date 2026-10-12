@@ -1,6 +1,9 @@
 export const siteMetadata = {
   title: "Coach'n Pulse",
-  description: 'Programme sportif et bilan personalisé adapté à votre niveau et vos objectifs',
+  description: 'Programme sportif et bilan personnalisé adapté à votre niveau et vos objectifs',
+  phone: '07 68 79 44 78',
+  phoneHref: 'tel:0768794478',
+  email: 'luck.nahon@gmail.com',
   goals: [
     'Santé',
     'Loisir',
