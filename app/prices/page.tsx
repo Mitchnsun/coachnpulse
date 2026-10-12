@@ -1,88 +1,106 @@
-import Image from 'next/image';
-
+import PageHero from '@components/pageHero';
+import PhotoStrip from '@components/photoStrip';
 import TablePrices from '@components/tablePrices';
+import { COACHING_PRICES, SESSION_PACKAGES } from '@data/prices';
+import { container, gutterX, sectionTitle, sectionY, twoColumnGrid } from '@utils/styles';
+
+const COACHING_BORDERS = ['border-blue', 'border-ink'];
+
+const PHOTOS = [
+  { src: '/img/swimming2.jpg', alt: 'Natation' },
+  { src: '/img/cycling.jpg', alt: 'Vélo' },
+  { src: '/img/running5.jpg', alt: 'Course à pied' },
+];
 
 const PricesPage = () => {
   return (
     <>
-      <div className="min-[950px]:flex">
-        <section className="grow-5 bg-black p-4">
-          <h2 className="m-0 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
-            Tarifs pour programme à distance
-          </h2>
-          <p className="text-yellow my-4">
-            Exemples de tarifs forfaitaires programme d&apos;entraînement
-          </p>
+      <PageHero
+        image="/img/cycling.jpg"
+        imagePosition="center 40%"
+        overlayClassName="from-black/15"
+        eyebrow="Formules"
+        title="Tarifs"
+      />
+      <section className={`${gutterX} ${sectionY}`}>
+        <div className={`items-start gap-[clamp(28px,5cqw,80px)] ${container} ${twoColumnGrid}`}>
+          <div>
+            <h2 className={sectionTitle}>Tarifs pour programme à distance</h2>
+            <p className="text-muted-dark mt-4">
+              Exemples de tarifs forfaitaires programme d&apos;entraînement
+            </p>
+            <p className="border-blue mt-[clamp(20px,3cqw,40px)] max-w-[44ch] border-t-[3px] pt-5">
+              Les conseils (techniques, diététiques, matériels) sont inclus dans votre progression
+              et l&apos;accompagnement sportif.
+            </p>
+          </div>
           <TablePrices />
-          <p className="text-yellow my-4">
-            Les conseils (techniques, diététiques, matériels) sont inclus dans votre progression et
-            l&apos;accompagnement sportif.
-          </p>
-        </section>
-        <section className="bg-blue basis-[30%] p-4">
-          <h2 className="m-0 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
-            Possibilité de séances encadrées
-          </h2>
-          <p className="font-normal tracking-[0.1rem] text-white">
-            Sur le terrain ou à domicile (course à pied, natation, vélo, préparation physique){' '}
-            <strong>35€/h</strong>
-          </p>
-          <h2 className="m-0 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
-            Forfaits séances
-          </h2>
-          <ul className="text-white">
-            <li className="list-outside list-disc">3 séances: 95€</li>
-            <li className="list-outside list-disc">10 séances: 285€</li>
-            <li className="list-outside list-disc">
-              Plus de 20 kms autour de l&apos;agglomération grenobloise: 0,50€/km
-            </li>
-            <li className="list-outside list-disc">
-              Possibilité d&apos;un bilan spécifique complet diététique: 80€
-            </li>
-          </ul>
-          <h2 className="m-0 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
+        </div>
+      </section>
+      <section className={`bg-black text-white ${gutterX} ${sectionY}`}>
+        <div className={`items-start gap-[clamp(28px,5cqw,80px)] ${container} ${twoColumnGrid}`}>
+          <div>
+            <h2 className={sectionTitle}>Possibilité de séances encadrées</h2>
+            <p className="mt-4 max-w-[40ch] text-white/78">
+              Sur le terrain ou à domicile (course à pied, natation, vélo, préparation physique)
+            </p>
+            <div className="mt-7 flex items-baseline gap-2">
+              <span className="font-condensed text-blue text-[clamp(64px,7cqw,104px)] leading-[.9] font-bold">
+                35€
+              </span>
+              <span className="font-condensed text-[26px] font-semibold">/h</span>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-condensed text-blue mb-2 text-[15px] font-semibold tracking-[.16em] uppercase">
+              Forfaits séances
+            </h3>
+            <ul>
+              {SESSION_PACKAGES.map(({ label, price }) => (
+                <li
+                  key={label}
+                  className="flex items-baseline justify-between gap-4 border-b border-white/14 py-[18px] last:border-b-0"
+                >
+                  <span>{label}</span>
+                  <span className="font-condensed text-[30px] leading-none font-bold whitespace-nowrap">
+                    {price}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className={`${gutterX} ${sectionY}`}>
+        <div className={container}>
+          <h2 className={`mb-[clamp(28px,3.6cqw,48px)] ${sectionTitle}`}>
             Coaching et préparation mentale
           </h2>
-          <p className="font-normal tracking-[0.1rem] text-white">
-            En présentiel: <strong>60€/h</strong>
-          </p>
-          <ul className="text-white">
-            <li className="list-outside list-disc">Forfait 5 séances: 240€</li>
-          </ul>
-          <p className="font-normal tracking-[0.1rem] text-white">
-            En visio: <strong>40€/h</strong>
-          </p>
-          <ul className="text-white">
-            <li className="list-outside list-disc">Forfait 5 séances: 160€</li>
-          </ul>
-        </section>
-      </div>
-      <div className="flex flex-wrap bg-black">
-        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
-          <Image
-            src="/img/swimming2.jpg"
-            alt="Running Illustration"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[clamp(12px,1.6cqw,24px)]">
+            {COACHING_PRICES.map(({ label, price, packageLabel, packagePrice }, index) => (
+              <div
+                key={label}
+                className={`rounded-[2px] border-t-4 bg-white p-[clamp(24px,3cqw,40px)] ${COACHING_BORDERS[index]}`}
+              >
+                <div className="text-muted text-[13px] font-semibold tracking-[.16em] uppercase">
+                  {label}
+                </div>
+                <div className="mt-3.5 mb-6 flex items-baseline gap-1.5">
+                  <span className="font-condensed text-[clamp(56px,5cqw,72px)] leading-[.9] font-bold">
+                    {price}
+                  </span>
+                  <span className="font-condensed text-[24px] font-semibold">/h</span>
+                </div>
+                <div className="border-line-light flex justify-between border-t pt-4">
+                  <span>{packageLabel}</span>
+                  <strong className="font-semibold">{packagePrice}</strong>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
-          <Image
-            src="/img/cycling.jpg"
-            alt="Swimming Illustration"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
-          <Image
-            src="/img/running5.jpg"
-            alt="Cycling Illustration"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-      </div>
+      </section>
+      <PhotoStrip photos={PHOTOS} />
     </>
   );
 };

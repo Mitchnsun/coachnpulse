@@ -20,3 +20,37 @@ export const PRICES = [
     price: '1140€',
   },
 ];
+
+export const SESSION_PACKAGES = [
+  {
+    label: '3 séances',
+    price: '95€',
+  },
+  {
+    label: '10 séances',
+    price: '285€',
+  },
+  {
+    label: "Plus de 20 kms autour de l'agglomération grenobloise",
+    price: '0,50€/km',
+  },
+  {
+    label: "Possibilité d'un bilan spécifique complet diététique",
+    price: '80€',
+  },
+];
+
+export const COACHING_PRICES = [
+  {
+    label: 'En présentiel',
+    price: '60€',
+    packageLabel: 'Forfait 5 séances',
+    packagePrice: '240€',
+  },
+  {
+    label: 'En visio',
+    price: '40€',
+    packageLabel: 'Forfait 5 séances',
+    packagePrice: '160€',
+  },
+];

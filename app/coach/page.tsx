@@ -1,65 +1,87 @@
 import Image from 'next/image';
 
-import Infos from '@components/infos';
+import Eyebrow from '@components/eyebrow';
+import PhotoStrip from '@components/photoStrip';
+import { container, gutterX, twoColumnGrid } from '@utils/styles';
+
+const DIPLOMAS = [
+  "Educateur sportif // Diplômé d'Etat DEJEPS Triathlon",
+  'Entraîneur de triathlon, préparateur mental',
+  'Maître Nageur Sauveteur',
+];
+
+const EXPERIENCES = [
+  'Entraîneur GUC (Grenoble Université Club) section triathlon',
+  'Responsable formation et enseignant Eklore-ed sport: running, diététique sportive, musculation, fitness...',
+  "Coaching de sportifs d'ultra distance en sport d'endurance",
+  'Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)',
+];
+
+const PHOTOS = [
+  { src: '/img/running.jpg', alt: 'Course à pied' },
+  { src: '/img/swimming.jpg', alt: 'Natation' },
+  { src: '/img/cycling2.jpg', alt: 'Vélo', position: '70% center' },
+];
+
+type CoachListProps = {
+  title: string;
+  items: string[];
+  bulletClassName: string;
+  itemClassName?: string;
+};
+
+const CoachList = ({ title, items, bulletClassName, itemClassName = '' }: CoachListProps) => (
+  <div>
+    <h3 className="font-condensed text-muted mb-1.5 text-[15px] font-semibold tracking-[.16em] uppercase">
+      {title}
+    </h3>
+    <ul>
+      {items.map((item) => (
+        <li key={item} className="border-line flex gap-3.5 border-b py-3">
+          <span className={`mt-[9px] size-2 flex-none ${bulletClassName}`} />
+          <span className={itemClassName}>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 const CoachPage = () => {
   return (
     <>
-      <div className="bg-black md:flex md:h-75 md:items-center">
-        <div className="relative inline-block h-75 w-62.5 shrink-0 overflow-hidden">
-          <Image src="/img/Luc-2025.jpeg" alt="Luc Nahon" fill style={{ objectFit: 'cover' }} />
+      <section className={`py-[clamp(40px,7cqw,104px)] ${gutterX}`}>
+        <div className={`items-center gap-[clamp(32px,6cqw,96px)] ${container} ${twoColumnGrid}`}>
+          <div className="relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2px]">
+              <Image
+                src="/img/Luc-2025.jpeg"
+                alt="Luc Nahon"
+                fill
+                priority
+                sizes="(min-width: 900px) 50vw, 100vw"
+                className="object-cover object-[center_20%]"
+              />
+            </div>
+            <span className="bg-blue absolute bottom-0 left-0 block h-1.5 w-2/5" />
+          </div>
+          <div>
+            <Eyebrow className="text-blue-dark mb-3.5">Le coach</Eyebrow>
+            <h1 className="font-condensed mb-[clamp(28px,3cqw,44px)] text-[clamp(52px,6cqw,88px)] leading-[.92] font-bold uppercase">
+              Luc Nahon
+            </h1>
+            <div className="flex flex-col gap-[clamp(24px,2.6cqw,36px)]">
+              <CoachList
+                title="Diplômes"
+                items={DIPLOMAS}
+                bulletClassName="bg-blue"
+                itemClassName="font-medium"
+              />
+              <CoachList title="Expérience" items={EXPERIENCES} bulletClassName="bg-ink" />
+            </div>
+          </div>
         </div>
-        <article className="max-[800px]:mx-10 max-[800px]:py-4 md:ml-[15%]">
-          <h1 className="m-0 pb-3 text-2xl font-normal tracking-[0.05rem] text-white uppercase">
-            Luc Nahon
-          </h1>
-          <p className="text-yellow m-0 font-normal tracking-[0.1rem]">
-            Educateur sportif // Diplômé d&apos;Etat DEJEPS Triathlon
-            <br />
-            Entraîneur de triathlon, préparateur mental
-            <br />
-            Maître Nageur Sauveteur
-          </p>
-          <br />
-          <p className="text-yellow m-0 font-normal tracking-[0.1rem]">
-            Entraîneur GUC (Grenoble Université Club) section triathlon
-            <br />
-            Responsable formation et enseignant Eklore-ed sport: running, diététique sportive,
-            musculation, fitness...
-            <br />
-            Coaching de sportifs d&apos;ultra distance en sport d&apos;endurance
-            <br />
-            Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)
-          </p>
-        </article>
-      </div>
-      <div className="flex flex-wrap bg-black">
-        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
-          <Image
-            src="/img/running.jpg"
-            alt="Running Illustration"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
-          <Image
-            src="/img/swimming.jpg"
-            alt="Swimming Illustration"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-        <div className="relative min-h-75 grow basis-[30%] max-[750px]:basis-1/2">
-          <Image
-            src="/img/cycling2.jpg"
-            alt="Cycling Illustration"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-      </div>
-      <Infos />
+      </section>
+      <PhotoStrip photos={PHOTOS} />
     </>
   );
 };
