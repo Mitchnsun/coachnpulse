@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Infos = () => (
   <div className="p-4 min-[750px]:flex">
     <p
