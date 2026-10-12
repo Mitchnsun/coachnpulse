@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-20 border-b border-white/8 bg-black">
-      <div className="mx-auto flex h-[clamp(68px,6cqw,84px)] max-w-[1280px] items-center justify-between gap-6 px-[clamp(16px,4cqw,48px)]">
+      <div className="mx-auto flex h-[clamp(68px,6cqw,84px)] max-w-7xl items-center justify-between gap-6 px-[clamp(16px,4cqw,48px)]">
         <Link href="/" className="flex" onClick={closeMenu}>
           <Image
             src="/img/logo-dark.png"
@@ -43,7 +43,7 @@ const Header = () => {
           })}
           <a
             href={`mailto:${siteMetadata.email}`}
-            className="bg-blue font-condensed rounded-[2px] px-5 py-3 text-[16px] font-bold tracking-[.1em] text-black uppercase hover:bg-white hover:text-black"
+            className="bg-blue font-condensed rounded-xs px-5 py-3 text-[16px] font-bold tracking-widest text-black uppercase hover:bg-white hover:text-black"
           >
             Contact
           </a>
@@ -54,7 +54,7 @@ const Header = () => {
           aria-label="Menu"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
-          className="flex size-11 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-[2px] border border-white/25 bg-transparent p-0 min-[760px]:hidden"
+          className="flex size-11 cursor-pointer flex-col items-center justify-center gap-1.25 rounded-xs border border-white/25 bg-transparent p-0 min-[760px]:hidden"
         >
           <span className="block h-0.5 w-5 bg-white" />
           <span className="bg-blue block h-0.5 w-5" />
@@ -84,7 +84,7 @@ const Header = () => {
           })}
           <a
             href={siteMetadata.phoneHref}
-            className="bg-blue font-condensed mt-5 p-3.5 text-center text-[18px] font-bold tracking-[.1em] text-black uppercase"
+            className="bg-blue font-condensed mt-5 p-3.5 text-center text-[18px] font-bold tracking-widest text-black uppercase"
           >
             {siteMetadata.phone}
           </a>

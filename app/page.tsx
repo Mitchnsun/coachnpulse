@@ -38,7 +38,7 @@ const Home = () => {
             </a>
             <a
               href={siteMetadata.phoneHref}
-              className="font-condensed hover:border-blue hover:text-blue rounded-[2px] border border-white/50 px-7 py-[15px] text-[18px] font-semibold tracking-[.1em] text-white"
+              className="font-condensed hover:border-blue hover:text-blue rounded-xs border border-white/50 px-7 py-3.75 text-[18px] font-semibold tracking-widest text-white"
             >
               {siteMetadata.phone}
             </a>
@@ -63,7 +63,7 @@ const Home = () => {
               <Link
                 key={src}
                 href="/description"
-                className="relative block h-[clamp(240px,34cqw,500px)] overflow-hidden rounded-[2px]"
+                className="relative block h-[clamp(240px,34cqw,500px)] overflow-hidden rounded-xs"
               >
                 <Image
                   src={src}
