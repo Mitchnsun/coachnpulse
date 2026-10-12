@@ -8,10 +8,10 @@ const Footer = () => (
   <footer className={`bg-black py-[clamp(32px,4cqw,48px)] text-white/66 ${gutterX}`}>
     <div className={`flex flex-wrap items-center justify-between gap-5 ${container}`}>
       <Image
-        src="/img/blacklogo.jpg"
+        src="/img/logo-dark.png"
         alt="Coach'n Pulse"
-        width={1024}
-        height={316}
+        width={320}
+        height={306}
         className="block h-11 w-auto"
       />
       <nav className="flex flex-wrap gap-6">

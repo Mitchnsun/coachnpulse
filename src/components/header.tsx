@@ -18,10 +18,10 @@ const Header = () => {
       <div className="mx-auto flex h-[clamp(68px,6cqw,84px)] max-w-[1280px] items-center justify-between gap-6 px-[clamp(16px,4cqw,48px)]">
         <Link href="/" className="flex" onClick={closeMenu}>
           <Image
-            src="/img/blacklogo.jpg"
+            src="/img/logo-dark.png"
             alt="Coach'n Pulse"
-            width={1024}
-            height={316}
+            width={320}
+            height={306}
             priority
             className="block h-[clamp(44px,4cqw,56px)] w-auto"
           />
