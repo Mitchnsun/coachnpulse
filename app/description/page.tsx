@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 import PageHero from '@components/pageHero';
+import { PAGES } from '@data/pages';
+import { pageMetadata } from '@utils/seo';
 import { siteMetadata } from '@utils/site-metadata';
 import {
   container,
@@ -10,6 +12,8 @@ import {
   sectionY,
   twoColumnGrid,
 } from '@utils/styles';
+
+export const metadata = pageMetadata(PAGES.description);
 
 const DescriptionPage = () => {
   const { goals, sessions } = siteMetadata;

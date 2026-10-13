@@ -2,20 +2,12 @@ import Image from 'next/image';
 
 import Eyebrow from '@components/eyebrow';
 import PhotoStrip from '@components/photoStrip';
+import { DIPLOMAS, EXPERIENCES } from '@data/coach';
+import { PAGES } from '@data/pages';
+import { pageMetadata } from '@utils/seo';
 import { container, gutterX, twoColumnGrid } from '@utils/styles';
 
-const DIPLOMAS = [
-  "Educateur sportif // Diplômé d'Etat DEJEPS Triathlon",
-  'Entraîneur de triathlon, préparateur mental',
-  'Maître Nageur Sauveteur',
-];
-
-const EXPERIENCES = [
-  'Entraîneur GUC (Grenoble Université Club) section triathlon',
-  'Responsable formation et enseignant Eklore-ed sport: running, diététique sportive, musculation, fitness...',
-  "Coaching de sportifs d'ultra distance en sport d'endurance",
-  'Finisher de plusieurs Ironman en Europe (Embrun, Zürich, Nice...)',
-];
+export const metadata = pageMetadata(PAGES.coach);
 
 const PHOTOS = [
   { src: '/img/swimming.jpg', alt: 'Natation' },
@@ -32,9 +24,9 @@ type CoachListProps = {
 
 const CoachList = ({ title, items, bulletClassName, itemClassName = '' }: CoachListProps) => (
   <div>
-    <h3 className="font-condensed text-muted mb-1.5 text-[15px] font-semibold tracking-[.16em] uppercase">
+    <h2 className="font-condensed text-muted mb-1.5 text-[15px] font-semibold tracking-[.16em] uppercase">
       {title}
-    </h3>
+    </h2>
     <ul>
       {items.map((item) => (
         <li key={item} className="border-line flex gap-3.5 border-b py-3">

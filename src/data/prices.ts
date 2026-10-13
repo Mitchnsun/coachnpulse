@@ -21,6 +21,8 @@ export const PRICES = [
   },
 ];
 
+export const SESSION_HOURLY_PRICE = '35€';
+
 export const SESSION_PACKAGES = [
   {
     label: '3 séances',

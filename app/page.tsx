@@ -2,8 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Eyebrow from '@components/eyebrow';
+import { PAGES } from '@data/pages';
+import { pageMetadata } from '@utils/seo';
 import { siteMetadata } from '@utils/site-metadata';
 import { container, gutterX, primaryButton, sectionY } from '@utils/styles';
+
+export const metadata = pageMetadata(PAGES.home);
 
 const SPORTS = [
   { src: '/img/swimming2.jpg', label: 'Natation' },
