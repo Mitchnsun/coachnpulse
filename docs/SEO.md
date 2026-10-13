@@ -1,7 +1,7 @@
 # Audit SEO et visibilité pour les agents IA — coachnpulse.com
 
-- **Date** : 13 octobre 2026 (mise à jour le même jour avec les réponses et l'export Search Console)
-- **Périmètre** : site en production https://www.coachnpulse.com (déploiement du 12/10/2026, v5), code de ce dépôt et export Google Search Console (rapport « Pages », 5 au 9 octobre 2026)
+- **Date** : 13 octobre 2026 (mis à jour le même jour avec les réponses et les exports Search Console)
+- **Périmètre** : site en production https://www.coachnpulse.com (déploiement du 12/10/2026, v5), code de ce dépôt et exports Google Search Console (rapport « Pages » du 9 octobre 2026, rapport « Performance » des 3 derniers mois)
 - **Règle suivie** : aucune information inventée. Tout ce qui est ajouté au site provient de textes déjà publiés ou des réponses fournies. Le reste est posé en questions (section 8).
 
 ## 1. Synthèse
@@ -14,7 +14,7 @@ Techniquement, le site est sain : HTML statique lisible sans JavaScript, HTTPS, 
 4. **Aucune donnée structurée (schema.org) ni aucune carte de partage (Open Graph).**
 5. **Très peu de texte** : environ 90 mots sur l'accueil, navigation comprise.
 6. **Aucune présence externe** : pas de fiche Google Business Profile, pas de réseaux sociaux. Les recherches sur la marque ne renvoient pas le site, qui se confond avec des homonymes (« Coach Pulse »).
-7. **Search Console** : 3 pages indexées, 11 URL non indexées, environ 9 impressions par jour (section 3).
+7. **Search Console** : 3 pages indexées (`/`, `/prices`, `/coach`), `/description` très probablement non indexée ; 63 impressions et 1 clic en 3 mois, presque tous sur l'accueil (section 3).
 
 Cette branche corrige tous les points techniques, renomme les URL, rend les H1 plus descriptifs et redirige les anciennes URL. Les gains les plus importants restent hors code : créer la fiche Google Business Profile, et rédiger du contenu dès que les informations seront disponibles.
 
@@ -24,7 +24,7 @@ Cette branche corrige tous les points techniques, renomme les URL, rend les H1 p
 - Test d'accès avec les robots Googlebot, Bingbot, GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot et CCBot : tous reçoivent une réponse **200**. Le pare-feu Vercel ne bloque aucun robot.
 - Recherches web sur la marque et sur le coach.
 - Lecture du code et de l'historique git (Next.js 15, `output: 'export'`, hébergement Vercel ; versions précédentes en HTML en 2017 puis Gatsby).
-- Analyse de l'export Search Console fourni.
+- Analyse des exports Search Console fournis.
 
 ### Points positifs
 
@@ -33,7 +33,9 @@ Cette branche corrige tous les points techniques, renomme les URL, rend les H1 p
 - Attributs `alt` présents sur les images de contenu.
 - Navigation en liens HTML classiques, dans l'en-tête et le pied de page.
 
-## 3. Search Console (export du 9 octobre 2026)
+## 3. Search Console
+
+### 3.1 Indexation (rapport « Pages », 9 octobre 2026)
 
 | Indicateur                   | Valeur                                                     |
 | ---------------------------- | ---------------------------------------------------------- |
@@ -43,15 +45,41 @@ Cette branche corrige tous les points techniques, renomme les URL, rend les H1 p
 | Sitemap                      | Aucun sitemap valide possible : `sitemap.xml` était en 404 |
 | Validations                  | Aucune lancée                                              |
 
-| Motif de non-indexation         | URL | Lecture                                                                                                                                                                                                                                    | Action                                                                                         |
-| ------------------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
-| Page with redirect              | 7   | **Normal.** Ce sont les variantes qui redirigent : `http://`, sans `www`, ou avec une barre finale comme `/coach/` (format de l'ancien site Gatsby). Le nombre augmentera de 2 avec `/description` et `/prices`, qui redirigent désormais. | Aucune, sauf passer la redirection sans `www` en 308 (section 6)                               |
-| Not found (404)                 | 3   | **Hypothèse à confirmer** : anciennes URL du site de 2017 (`index.html`, `coach.html`, `description.html`, `prices.html`, `contact.html`), qui renvoient toutes une 404 aujourd'hui.                                                       | Redirigées dans cette branche (`vercel.json`). Vérifier la liste exacte, puis « Validate fix » |
-| Crawled - currently not indexed | 1   | URL non fournie dans l'export. Si c'est l'une des 4 pages, 3 indexées + 1 non indexée correspondent exactement aux 4 pages du site.                                                                                                        | Identifier l'URL, demander l'indexation après déploiement, puis valider                        |
+| Motif de non-indexation         | URL | Lecture                                                                                                                                                                                                                                        | Action                                                                                         |
+| ------------------------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Page with redirect              | 7   | **Normal.** Ce sont les variantes qui redirigent : `http://`, sans `www`, ou avec une barre finale comme `/coach/` (format de l'ancien site Gatsby). Le nombre augmentera de 2 avec `/description` et `/prices`, qui redirigent désormais.     | Aucune, sauf passer la redirection sans `www` en 308 (section 6)                               |
+| Not found (404)                 | 3   | **Hypothèse à confirmer** : anciennes URL du site de 2017 (`index.html`, `coach.html`, `description.html`, `prices.html`, `contact.html`), qui renvoient toutes une 404 aujourd'hui.                                                           | Redirigées dans cette branche (`vercel.json`). Vérifier la liste exacte, puis « Validate fix » |
+| Crawled - currently not indexed | 1   | **Très probablement `/description`** : c'est la seule des 4 pages sans aucune impression en 3 mois (section 3.2), et une page qui reçoit des impressions est forcément indexée. Elle devient `/programme`, avec un titre et un H1 plus clairs. | Après déploiement, « Request indexing » sur `/programme`, puis « Validate fix »                |
 
 **Point notable** : aucune URL n'apparaît en « Alternate page with proper canonical tag ». Si Google avait suivi le canonical erroné, les pages `/description`, `/coach` et `/prices` apparaîtraient sous ce motif. Google semble donc l'avoir **ignoré**, car les pages étaient trop différentes de l'accueil. L'impact réel du bug est probablement plus faible que craint, mais la correction reste nécessaire. Un canonical faux brouille les signaux envoyés aux moteurs.
 
 L'export ne couvre que 5 jours. Il est trop tôt pour lire une tendance. Il faudra comparer 2 à 4 semaines après le déploiement.
+
+### 3.2 Performance (recherche Web, 3 derniers mois)
+
+| Dimension | Valeur         | Clics | Impressions | CTR    | Position moyenne |
+| --------- | -------------- | ----- | ----------- | ------ | ---------------- |
+| Total     |                | 1     | 63          | 1,6 %  |                  |
+| Page      | `/`            | 1     | 54          | 1,85 % | 5,4              |
+| Page      | `/prices`      | 0     | 6           | 0 %    | 71,3             |
+| Page      | `/coach`       | 0     | 3           | 0 %    | 52,3             |
+| Page      | `/description` | —     | 0           | —      | —                |
+| Appareil  | Mobile         | 1     | 44          | 2,27 % | 5,8              |
+| Appareil  | Ordinateur     | 0     | 18          | 0 %    | 34,5             |
+| Appareil  | Tablette       | 0     | 1           | 0 %    | 3                |
+| Pays      | France         | 1     | 59          | 1,69 % | 13,9             |
+| Pays      | États-Unis     | 0     | 3           | 0 %    | 16,7             |
+| Pays      | Canada         | 0     | 1           | 0 %    | 7                |
+
+Lecture :
+
+- **Visibilité quasi nulle** : 63 impressions et 1 clic en 3 mois. D'après le rapport « Pages », 43 de ces 63 impressions tombent entre le 5 et le 9 octobre.
+- **Seul l'accueil apparaît vraiment** : 86 % des impressions, en position moyenne 5,4. `/prices` et `/coach` ne sortent qu'au-delà de la 5e page de résultats (positions 71 et 52), donc invisibles en pratique.
+- **Pages indexées** : une page qui reçoit des impressions est forcément indexée, et il y a exactement 3 pages indexées. Ce sont donc très probablement `/`, `/prices` et `/coach`, et `/description` est l'URL « Crawled - currently not indexed » (3.1).
+- **Le mobile domine** : 70 % des impressions, en position 5,8 (contre 34,5 sur ordinateur). L'allègement des images (−86 %) profite directement à la majorité des visiteurs.
+- **France** : 94 % des impressions.
+- **« Search appearance » vide** : aucun résultat enrichi. C'est normal, et cela ne changera pas avec les données structurées ajoutées (`Organization`, `Person`). Elles servent à identifier l'entreprise et le coach, pas à produire un résultat enrichi.
+- **Requêtes inconnues** : le fichier des requêtes (`Queries.csv`) n'a pas été transmis. S'il est vide, c'est attendu : Google masque les requêtes trop rares (« requêtes anonymisées »). Sans lui, impossible de savoir si les impressions viennent de recherches sur le nom de la marque ou de recherches génériques.
 
 ## 4. Constats
 
@@ -72,10 +100,11 @@ L'export ne couvre que 5 jours. Il est trop tôt pour lire une tendance. Il faud
 | 13  | Moyenne  | URL en anglais (`/prices`) ou peu parlante (`/description`) sur un site francophone                                     | ✅ `/programme` et `/tarifs`, avec redirections 308 |
 | 14  | Basse    | Page 404 en anglais (« This page could not be found. ») avec deux balises `<title>`                                     | ✅ Corrigé                                          |
 | 15  | Basse    | Hiérarchie des titres de `/coach` : un H1 suivi directement de H3                                                       | ✅ Corrigé (H2)                                     |
-| 16  | Basse    | Pas de mentions légales (obligatoires pour un site professionnel en France, et signal de confiance)                     | ❓ Q5                                               |
+| 16  | Basse    | Pas de mentions légales (obligatoires pour un site professionnel en France, et signal de confiance)                     | ⏸️ Statut connu ; manque SIRET et adresse (Q5)      |
 | 17  | Basse    | Les photos de sport semblent venir d'une banque d'images : aucune photo réelle de séance ou d'athlète, sauf le portrait | ❓ Q10                                              |
 | 18  | Info     | Ligne de tarif ambiguë : « Plus de 20 kms autour de l'agglomération grenobloise : 0,50€/km »                            | ❓ Q15                                              |
-| 19  | Info     | Images publiées mais inutilisées : `Luc.jpg`, `blacklogo.jpg`, `whitelogo.jpg`, `running4.jpg`                          | Non traité (nettoyage optionnel)                    |
+| 19  | Info     | Tarifs sans mention TTC ou HT : ambigu pour les visiteurs comme pour les agents IA                                      | ✅ « Tous les tarifs sont indiqués TTC. »           |
+| 20  | Info     | Images publiées mais inutilisées : `Luc.jpg`, `blacklogo.jpg`, `whitelogo.jpg`, `running4.jpg`                          | Non traité (nettoyage optionnel)                    |
 
 ## 5. Modifications faites dans cette branche
 
@@ -92,6 +121,7 @@ L'export ne couvre que 5 jours. Il est trop tôt pour lire une tendance. Il faud
 | `vercel.json`                                   | Redirections 308 : `/description` → `/programme`, `/prices` → `/tarifs`, et anciennes URL de 2017 (`index.html`, `description.html`, `coach.html`, `prices.html`, `contact.html`)  |
 | `app/page.tsx`                                  | H1 « Coach sportif et triathlon à Grenoble » ; l'ancienne phrase devient le sous-titre                                                                                             |
 | `app/programme/page.tsx`                        | H1 « Le programme » (au lieu de « Description »)                                                                                                                                   |
+| `app/tarifs/page.tsx`, `src/data/prices.ts`     | Mention « Tous les tarifs sont indiqués TTC. », reprise dans `llms.txt`                                                                                                            |
 | `app/not-found.tsx`                             | Page 404 en français                                                                                                                                                               |
 | `app/favicon.ico`, `icon.png`, `apple-icon.png` | Icônes 16/32/48 px, 192 px et 180 px (iOS), générées à partir du logo existant                                                                                                     |
 | `app/coach/page.tsx`                            | « Diplômes » et « Expérience » passent de H3 à H2 (rendu visuel identique) ; leurs données sont déplacées dans `src/data/coach.ts`                                                 |
@@ -120,7 +150,7 @@ L'export ne couvre que 5 jours. Il est trop tôt pour lire une tendance. Il faud
    - **Sitemaps** : soumettre `https://www.coachnpulse.com/sitemap.xml`.
    - **URL inspection** : « Request indexing » pour `/`, `/programme`, `/coach` et `/tarifs`.
    - **Pages → Not found (404)** : vérifier que les 3 URL font partie des anciennes URL redirigées, puis cliquer sur « Validate fix ». Si d'autres URL apparaissent, me les transmettre pour ajouter des redirections.
-   - **Pages → Crawled - currently not indexed** : identifier l'URL ; si c'est une page du site, demander son indexation puis « Validate fix ».
+   - **Pages → Crawled - currently not indexed** : vérifier qu'il s'agit bien de `/description` (redirigée vers `/programme`), puis « Validate fix ».
    - **Page with redirect** : rien à faire.
 3. **Bing Webmaster Tools** : importer la propriété depuis Search Console et soumettre le sitemap. L'index Bing alimente Copilot et DuckDuckGo, et plusieurs assistants IA s'appuient sur des index de recherche tiers.
 4. **Créer la fiche Google Business Profile** : c'est le premier levier pour des recherches comme « coach sportif Grenoble » ou « coach triathlon Grenoble ». Sans lieu fixe, il faut indiquer que l'entreprise **se déplace chez ses clients** : l'adresse reste masquée et on définit une zone desservie (agglomération grenobloise, comme sur le site). Utiliser exactement le même nom, téléphone et site web que sur coachnpulse.com. Une fois la fiche créée, transmettre son URL pour l'ajouter aux données structurées (`sameAs`).
@@ -157,12 +187,20 @@ L'export ne couvre que 5 jours. Il est trop tôt pour lire une tendance. Il faud
 | Q7. GUC triathlon et Eklore-ed             | Expériences actuelles                   | Affiliations ajoutées au JSON-LD de Luc Nahon   |
 | Q12 à Q14, Q16. Déroulement, public, FAQ   | Pas d'informations pour l'instant       | Aucun contenu rédigé : rien n'est inventé       |
 | Q18 et Q19. URL et H1                      | Oui                                     | Fait (sections 5 et 7)                          |
-| Q23. Search Console                        | Configurée, export fourni               | Analyse en section 3                            |
+| Q23. Search Console                        | Configurée, export fourni               | Analyse en section 3.1                          |
+| Q5 (en partie). Statut et TVA              | Auto-entrepreneur, prix TTC             | Mention TTC ajoutée (page Tarifs, `llms.txt`)   |
+| Q24 (en partie). Pages indexées            | Déduites de l'export Performance        | `/`, `/prices`, `/coach` (section 3.2)          |
+| Q25. Rapport Performance                   | Fourni, sans le fichier des requêtes    | Analyse en section 3.2                          |
 
 ### Questions encore ouvertes
 
 - **Q3.** Le programme à distance et la visio sont-ils proposés partout en France ? À l'étranger ?
-- **Q5.** Pour les mentions légales : statut juridique, SIRET, numéro de carte professionnelle d'éducateur sportif, TVA applicable ou non (les prix sont-ils TTC ?).
+- **Q5.** Pour publier les mentions légales (LCEN, article 6), il manque :
+  - le numéro SIRET ;
+  - l'adresse à publier (domicile ou adresse de domiciliation), exigée pour un entrepreneur individuel même sans lieu d'accueil ;
+  - le médiateur de la consommation : un professionnel qui vend des services à des particuliers doit en indiquer un ;
+  - en option, le numéro de carte professionnelle d'éducateur sportif (signal de confiance) ;
+  - la TVA : si l'activité bénéficie de la franchise en base de TVA (cas fréquent en micro-entreprise), la mention habituelle est « TVA non applicable, art. 293 B du CGI ». Le site affiche « TTC » comme indiqué : faut-il ajouter cette mention ?
 - **Q6.** Depuis quand l'activité existe-t-elle ?
 - **Q8.** Faut-il préciser les résultats sportifs (Ironman : années, éventuellement temps) ?
 - **Q9.** Existe-t-il des avis ou témoignages clients réels, publiables avec l'accord des clients ?
@@ -170,12 +208,12 @@ L'export ne couvre que 5 jours. Il est trop tôt pour lire une tendance. Il faud
 - **Q11.** Une adresse e-mail sur le domaine (par ex. contact@coachnpulse.com) est-elle envisageable ?
 - **Q15.** La ligne « Plus de 20 kms autour de l'agglomération grenobloise : 0,50€/km » correspond-elle à des frais de déplacement ? Les tarifs sont-ils à jour en octobre 2026 ?
 - **Q12 à Q14, Q16 et Q17 (à demander à Luc)** : déroulement de l'accompagnement, public visé, préparation mentale, questions fréquentes des prospects, possibilité de rédiger du contenu régulier. Ce sont les informations qui manquent le plus au site.
-- **Q24.** Dans Search Console, les listes d'URL (clic sur chaque motif, puis export) : les 3 pages indexées, les 3 URL en « Not found (404) » et l'URL en « Crawled - currently not indexed ».
-- **Q25.** Un export du rapport « Performance » (requêtes et pages, sur 3 mois) : il montrerait quelles recherches génèrent les impressions actuelles.
+- **Q24.** Dans Search Console, la liste des 3 URL en « Not found (404) » (clic sur le motif, puis export), pour confirmer qu'elles sont couvertes par les redirections.
+- **Q25.** Le fichier `Queries.csv` de l'export « Performance », s'il n'est pas vide : il montrerait quelles recherches génèrent les impressions actuelles.
 
 ## 9. Feuille de route
 
-1. **Fait dans cette branche** : canonical, métadonnées, `robots.txt`, `sitemap.xml`, `llms.txt`, JSON-LD, icônes, poids des images, URL en français, H1, redirections des anciennes URL.
+1. **Fait dans cette branche** : canonical, métadonnées, `robots.txt`, `sitemap.xml`, `llms.txt`, JSON-LD, icônes, poids des images, URL en français, H1, redirections des anciennes URL, mention TTC.
 2. **Juste après le déploiement** : redirection Vercel en 308, actions Search Console et Bing (section 6), création de la fiche Google Business Profile.
-3. **Dès que les informations arrivent** : page de mentions légales (Q5), page « Comment ça marche » et FAQ (Q12 à Q16), avis (Q9), photos réelles et image de partage (Q10), `sameAs` vers la fiche Google.
+3. **Dès que les informations arrivent** : page de mentions légales (SIRET et adresse, Q5), page « Comment ça marche » et FAQ (Q12 à Q16), avis (Q9), photos réelles et image de partage (Q10), `sameAs` vers la fiche Google.
 4. **Dans 2 à 4 semaines** : nouvel export Search Console (rapports « Pages » et « Performance ») pour mesurer l'effet des corrections.

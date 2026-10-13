@@ -1,3 +1,5 @@
+export const PRICES_NOTE = 'Tous les tarifs sont indiqués TTC.';
+
 export const PRICES = [
   {
     label: 'Pour 1 mois',

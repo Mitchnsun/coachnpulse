@@ -1,6 +1,12 @@
 import { DIPLOMAS, EXPERIENCES } from '@data/coach';
 import { PAGES } from '@data/pages';
-import { COACHING_PRICES, PRICES, SESSION_HOURLY_PRICE, SESSION_PACKAGES } from '@data/prices';
+import {
+  COACHING_PRICES,
+  PRICES,
+  PRICES_NOTE,
+  SESSION_HOURLY_PRICE,
+  SESSION_PACKAGES,
+} from '@data/prices';
 import { siteMetadata } from '@utils/site-metadata';
 
 export const dynamic = 'force-static';
@@ -44,6 +50,8 @@ ${list(DIPLOMAS)}
 ${list(EXPERIENCES)}
 
 ## Tarifs
+
+${PRICES_NOTE}
 
 ### Programme d'entraînement à distance (exemples de tarifs forfaitaires)
 

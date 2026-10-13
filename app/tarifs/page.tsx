@@ -2,7 +2,7 @@ import PageHero from '@components/pageHero';
 import PhotoStrip from '@components/photoStrip';
 import TablePrices from '@components/tablePrices';
 import { PAGES } from '@data/pages';
-import { COACHING_PRICES, SESSION_HOURLY_PRICE, SESSION_PACKAGES } from '@data/prices';
+import { COACHING_PRICES, PRICES_NOTE, SESSION_HOURLY_PRICE, SESSION_PACKAGES } from '@data/prices';
 import { pageMetadata } from '@utils/seo';
 import { container, gutterX, sectionTitle, sectionY, twoColumnGrid } from '@utils/styles';
 
@@ -102,6 +102,7 @@ const PricesPage = () => {
               </div>
             ))}
           </div>
+          <p className="text-muted-dark mt-[clamp(20px,2.4cqw,32px)]">{PRICES_NOTE}</p>
         </div>
       </section>
       <PhotoStrip photos={PHOTOS} />
