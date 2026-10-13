@@ -3,6 +3,7 @@
   "redirects": [
     { "source": "/description", "destination": "/programme", "permanent": true },
     { "source": "/prices", "destination": "/tarifs", "permanent": true },
+    { "source": "/prices/", "destination": "/tarifs", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/description.html", "destination": "/programme", "permanent": true },
     { "source": "/coach.html", "destination": "/coach", "permanent": true },
