@@ -19,6 +19,8 @@ export const GET = () => {
 
 > Encadrement sportif personnalisé par ${coach}, éducateur sportif diplômé d'État DEJEPS Triathlon. ${description}, avec possibilité de séances encadrées sur le terrain ou à domicile.
 
+Pas de lieu fixe : le coach se déplace (sur le terrain ou à domicile) ou accompagne en visio.
+
 ## Pages
 
 ${list(pages)}

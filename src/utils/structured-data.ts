@@ -36,6 +36,10 @@ export const structuredData = {
       image: `${siteUrl}/img/Luc-2025.jpeg`,
       jobTitle: 'Éducateur sportif, entraîneur de triathlon et préparateur mental',
       worksFor: { '@id': organizationId },
+      affiliation: [
+        { '@type': 'SportsOrganization', name: 'GUC (Grenoble Université Club) section triathlon' },
+        { '@type': 'Organization', name: 'Eklore-ed sport' },
+      ],
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', name: "Diplôme d'État DEJEPS Triathlon" },
         { '@type': 'EducationalOccupationalCredential', name: 'Maître Nageur Sauveteur' },

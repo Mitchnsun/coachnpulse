@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/description", "destination": "/programme", "permanent": true },
+    { "source": "/prices", "destination": "/tarifs", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/description.html", "destination": "/programme", "permanent": true },
+    { "source": "/coach.html", "destination": "/coach", "permanent": true },
+    { "source": "/prices.html", "destination": "/tarifs", "permanent": true },
+    { "source": "/contact.html", "destination": "/", "permanent": true }
+  ]
+}

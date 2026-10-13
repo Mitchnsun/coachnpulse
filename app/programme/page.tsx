@@ -13,9 +13,9 @@ import {
   twoColumnGrid,
 } from '@utils/styles';
 
-export const metadata = pageMetadata(PAGES.description);
+export const metadata = pageMetadata(PAGES.program);
 
-const DescriptionPage = () => {
+const ProgramPage = () => {
   const { goals, sessions } = siteMetadata;
   return (
     <>
@@ -23,8 +23,8 @@ const DescriptionPage = () => {
         image="/img/running3.jpg"
         imagePosition="center 35%"
         overlayClassName="from-black/20"
-        eyebrow="Le programme"
-        title="Description"
+        eyebrow="Encadrement sportif personnalisé"
+        title="Le programme"
       />
       <section className={`${gutterX} ${sectionY}`}>
         <div className={`items-start gap-[clamp(28px,5cqw,80px)] ${container} ${twoColumnGrid}`}>
@@ -66,7 +66,7 @@ const DescriptionPage = () => {
               </li>
             ))}
           </ul>
-          <Link href="/prices" className={`mt-9 inline-block ${primaryButton}`}>
+          <Link href={PAGES.prices.path} className={`mt-9 inline-block ${primaryButton}`}>
             Voir les tarifs
           </Link>
         </div>
@@ -75,4 +75,4 @@ const DescriptionPage = () => {
   );
 };
 
-export default DescriptionPage;
+export default ProgramPage;
