@@ -1,8 +1,12 @@
 import PageHero from '@components/pageHero';
 import PhotoStrip from '@components/photoStrip';
 import TablePrices from '@components/tablePrices';
-import { COACHING_PRICES, SESSION_PACKAGES } from '@data/prices';
+import { PAGES } from '@data/pages';
+import { COACHING_PRICES, PRICES_NOTE, SESSION_HOURLY_PRICE, SESSION_PACKAGES } from '@data/prices';
+import { pageMetadata } from '@utils/seo';
 import { container, gutterX, sectionTitle, sectionY, twoColumnGrid } from '@utils/styles';
+
+export const metadata = pageMetadata(PAGES.prices);
 
 const COACHING_BORDERS = ['border-blue', 'border-ink'];
 
@@ -46,7 +50,7 @@ const PricesPage = () => {
             </p>
             <div className="mt-7 flex items-baseline gap-2">
               <span className="font-condensed text-blue text-[clamp(64px,7cqw,104px)] leading-[.9] font-bold">
-                35€
+                {SESSION_HOURLY_PRICE}
               </span>
               <span className="font-condensed text-[26px] font-semibold">/h</span>
             </div>
@@ -98,6 +102,7 @@ const PricesPage = () => {
               </div>
             ))}
           </div>
+          <p className="text-muted-dark mt-[clamp(20px,2.4cqw,32px)]">{PRICES_NOTE}</p>
         </div>
       </section>
       <PhotoStrip photos={PHOTOS} />

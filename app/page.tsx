@@ -2,8 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Eyebrow from '@components/eyebrow';
+import { PAGES } from '@data/pages';
+import { pageMetadata } from '@utils/seo';
 import { siteMetadata } from '@utils/site-metadata';
 import { container, gutterX, primaryButton, sectionY } from '@utils/styles';
+
+export const metadata = pageMetadata(PAGES.home);
 
 const SPORTS = [
   { src: '/img/swimming2.jpg', label: 'Natation' },
@@ -27,10 +31,10 @@ const Home = () => {
         <div className={`relative w-full pb-[clamp(40px,6cqw,88px)] ${container} ${gutterX}`}>
           <Eyebrow className="text-blue mb-5">Encadrement sportif personnalisé</Eyebrow>
           <h1 className="font-condensed max-w-[12ch] text-[clamp(46px,6.6cqw,100px)] leading-[.92] font-bold tracking-[-.005em] text-balance text-white uppercase">
-            Programme sportif et bilan personnalisé
+            Coach sportif et triathlon à Grenoble
           </h1>
           <p className="mt-5 max-w-[36ch] text-[clamp(18px,1.6cqw,22px)] text-white/85">
-            adapté à votre niveau et vos objectifs
+            {siteMetadata.description}
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a href={`mailto:${siteMetadata.email}`} className={primaryButton}>
@@ -52,7 +56,7 @@ const Home = () => {
               Natation, vélo, course à pied
             </h2>
             <Link
-              href="/description"
+              href={PAGES.program.path}
               className="font-condensed border-blue text-blue border-b pb-1 text-[17px] font-semibold tracking-[.12em] uppercase"
             >
               Découvrir le programme →
@@ -62,7 +66,7 @@ const Home = () => {
             {SPORTS.map(({ src, label, position }, index) => (
               <Link
                 key={src}
-                href="/description"
+                href={PAGES.program.path}
                 className="relative block h-[clamp(240px,34cqw,500px)] overflow-hidden rounded-xs"
               >
                 <Image

@@ -1,3 +1,5 @@
+export const PRICES_NOTE = 'Tous les tarifs sont indiqués TTC.';
+
 export const PRICES = [
   {
     label: 'Pour 1 mois',
@@ -20,6 +22,8 @@ export const PRICES = [
     price: '1140€',
   },
 ];
+
+export const SESSION_HOURLY_PRICE = '35€';
 
 export const SESSION_PACKAGES = [
   {

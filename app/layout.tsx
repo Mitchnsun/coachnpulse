@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Barlow, Barlow_Condensed } from 'next/font/google';
 import { siteMetadata } from '@utils/site-metadata';
+import { structuredData } from '@utils/structured-data';
 import Header from '@components/header';
 import Infos from '@components/infos';
 import Footer from '@components/footer';
@@ -21,6 +22,7 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteMetadata.siteUrl),
   title: siteMetadata.title,
   description: siteMetadata.description,
 };
@@ -28,11 +30,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${barlow.variable} ${barlowCondensed.variable}`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://www.coachnpulse.com/" />
-      </head>
       <body className="bg-paper text-ink @container font-sans text-[17px] leading-[1.55]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+          }}
+        />
         <Header />
         <main>{children}</main>
         <Infos />
